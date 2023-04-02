@@ -1,9 +1,7 @@
-import Nav from "./Nav"
-import Footer from "./Footer"
 import { Metadata } from "next"
 import { Providers } from "./providers"
-import "./globals.css"
 import { Archivo as Serif } from "next/font/google"
+import "./globals.css"
 
 const serif = Serif({
 	subsets: ["latin"],
@@ -46,11 +44,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${serif.variable}`} suppressHydrationWarning>
 			<body>
-				<Providers>
-					<Nav />
-					{children}
-					<Footer />
-				</Providers>
+				<Providers>{children}</Providers>
 			</body>
 		</html>
 	)
