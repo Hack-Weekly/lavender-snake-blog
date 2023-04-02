@@ -1,6 +1,7 @@
 import Nav from "./Nav"
 import Footer from "./Footer"
 import { Metadata } from "next"
+import { Providers } from "./providers"
 import "./globals.css"
 import { Archivo as Serif } from "next/font/google"
 
@@ -43,11 +44,13 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en" className={`${serif.variable}`}>
+		<html lang="en" className={`${serif.variable}`} suppressHydrationWarning>
 			<body>
-				<Nav />
-				{children}
-				<Footer />
+				<Providers>
+					<Nav />
+					{children}
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	)
