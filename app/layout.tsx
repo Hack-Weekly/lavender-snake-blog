@@ -1,5 +1,5 @@
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Nav from "./Nav"
+import Footer from "./Footer"
 import { Metadata } from "next"
 import "./globals.css"
 
@@ -35,13 +35,13 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body>
-        <Nav />
-        {children}
-        <Footer />
-      </body>
-    </html>
-  )
+	return (
+		<html lang="en">
+			<body>
+				<Nav />
+				{children}
+				<Footer />
+			</body>
+		</html>
+	)
 }
