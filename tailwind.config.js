@@ -26,6 +26,12 @@ module.exports = {
         900: '#11062B',
         950: '#060011',
       },
+      error: {
+        DEFAULT: '#8C1D18',
+        content: '#F9DEDC',
+        focus: '#601410',
+        'content-focus': '#F2B8B5',
+      },
     },
     fontFamily: {
       serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
