@@ -1,6 +1,7 @@
 import Nav from "./Nav"
 import Footer from "./Footer"
 import { Metadata } from "next"
+import { Providers } from "./providers"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -36,11 +37,13 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body>
-				<Nav />
-				{children}
-				<Footer />
+				<Providers>
+					<Nav />
+					{children}
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	)
