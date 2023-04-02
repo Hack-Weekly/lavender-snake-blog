@@ -3,6 +3,13 @@ import Footer from "./Footer"
 import { Metadata } from "next"
 import { Providers } from "./providers"
 import "./globals.css"
+import { Archivo as Serif } from "next/font/google"
+
+const serif = Serif({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-serif",
+})
 
 export const metadata: Metadata = {
 	title: {
@@ -37,7 +44,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" className={`${serif.variable}`} suppressHydrationWarning>
 			<body>
 				<Providers>
 					<Nav />
