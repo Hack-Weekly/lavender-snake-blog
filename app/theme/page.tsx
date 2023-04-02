@@ -12,10 +12,23 @@ const primary = [
 	"text-primary-950",
 ]
 
-export default function Page() {
+const secondary = [
+	"text-secondary-50",
+	"text-secondary-100",
+	"text-secondary-200",
+	"text-secondary-300",
+	"text-secondary-400",
+	"text-secondary-500",
+	"text-secondary-600",
+	"text-secondary-700",
+	"text-secondary-800",
+	"text-secondary-900",
+	"text-secondary-950",
+]
+
+export default function ThemePage() {
 	return (
 		<main className="flex flex-col gap-2 p-4">
-			<h1 className="text-3xl font-bold">Lavender Snake Blog</h1>
 			<section className="flex flex-row flex-wrap gap-2">
 				<div className="flex w-fit flex-col gap-2 rounded-md bg-neutral-200 p-4">
 					<h2 className="text-2xl font-bold text-primary">Primary Colors</h2>
@@ -24,6 +37,18 @@ export default function Page() {
 							return (
 								<li key={index} className={primary}>
 									{primary}
+								</li>
+							)
+						})}
+					</ul>
+				</div>
+				<div className="flex w-fit flex-col gap-2 rounded-md bg-neutral-200 p-4">
+					<h2 className="text-2xl font-bold text-primary">Secondary Colors</h2>
+					<ul>
+						{secondary.map((secondary, index) => {
+							return (
+								<li key={index} className={secondary}>
+									{secondary}
 								</li>
 							)
 						})}
