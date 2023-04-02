@@ -33,10 +33,10 @@ module.exports = {
         'content-focus': '#F2B8B5',
       },
       success: {
-        DEFAULT: '#418632',
-        content: '#CCE9C4',
-        focus: '#19590C',
-        'content-focus': '#7CB56E',
+        DEFAULT: '#2B9115',
+        content: '#DFF6D9',
+        focus: '#1D620D',
+        'content-focus': '#B0E9A1',
       },
     },
     fontFamily: {
