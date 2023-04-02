@@ -2,6 +2,13 @@ import Nav from "./Nav"
 import Footer from "./Footer"
 import { Metadata } from "next"
 import "./globals.css"
+import { Archivo as Serif } from "next/font/google"
+
+const serif = Serif({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-serif",
+})
 
 export const metadata: Metadata = {
 	title: {
@@ -36,7 +43,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={`${serif.variable}`}>
 			<body>
 				<Nav />
 				{children}
