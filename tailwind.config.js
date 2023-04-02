@@ -32,6 +32,12 @@ module.exports = {
         focus: '#601410',
         'content-focus': '#F2B8B5',
       },
+      success: {
+        DEFAULT: '#418632',
+        content: '#CCE9C4',
+        focus: '#19590C',
+        'content-focus': '#7CB56E',
+      },
     },
     fontFamily: {
       serif: ['var(--font-serif)', ...defaultTheme.fontFamily.serif],
