@@ -43,7 +43,9 @@ export default function ThemePage() {
 					</ul>
 				</div>
 				<div className="flex w-fit flex-col gap-2 rounded-md bg-neutral-200 p-4">
-					<h2 className="text-2xl font-bold text-primary">Secondary Colors</h2>
+					<h2 className="text-2xl font-bold text-secondary">
+						Secondary Colors
+					</h2>
 					<ul>
 						{secondary.map((secondary, index) => {
 							return (
