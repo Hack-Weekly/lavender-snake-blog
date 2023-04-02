@@ -1,4 +1,11 @@
 import './globals.css'
+import { Archivo as Serif } from 'next/font/google'
+
+const serif = Serif({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-serif',
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${serif.variable}`}>
       <body>{children}</body>
     </html>
   )
