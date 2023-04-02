@@ -2,12 +2,12 @@ import Nav from "./Nav"
 import Footer from "./Footer"
 import { Metadata } from "next"
 import "./globals.css"
-import { Archivo as Serif } from 'next/font/google'
+import { Archivo as Serif } from "next/font/google"
 
 const serif = Serif({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-serif',
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-serif",
 })
 
 export const metadata: Metadata = {
