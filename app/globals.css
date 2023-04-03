@@ -10,3 +10,11 @@
 			"Segoe UI Symbol", "Noto Color Emoji";
 	}
 }
+
+@layer utilities {
+	/*Dynamic viewport height with viewport height as fallback.*/
+	.min-h-dscreen {
+		min-height: 100vh;
+		min-height: 100dvh;
+	}
+}
