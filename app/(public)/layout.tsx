@@ -7,9 +7,9 @@ export default function PublicLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<div>
+		<div className="min-h-dscreen flex flex-col items-center justify-between">
 			<Nav />
-			{children}
+			<main className="max-w-3xl">{children}</main>
 			<Footer />
 		</div>
 	)
