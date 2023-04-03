@@ -1,3 +1,10 @@
+import FeaturedPost from "./components/FeaturedPost"
+
+
 export default function Home() {
-	return <div className="text-2xl">Home</div>
+	return (
+		<main className="flex flex-col items-center">
+			<FeaturedPost />
+		</main>
+	)
 }

@@ -54,6 +54,10 @@ module.exports = {
 					focus: "#1D620D",
 					"content-focus": "#B0E9A1",
 				},
+				"grey-20": "#333333",
+				"grey-redtint": "#F7F2F2",
+				"title": "#24248E",
+
 			},
 			fontFamily: {
 				serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
