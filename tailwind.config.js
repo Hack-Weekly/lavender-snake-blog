@@ -62,6 +62,9 @@ module.exports = {
 			fontFamily: {
 				serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
 			},
+			screens: {
+				"xs": "480px",
+			}
 		},
 	},
 	plugins: [],

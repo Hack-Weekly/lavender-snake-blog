@@ -63,23 +63,23 @@ export default function FeaturedPost() {
     const datetime = new Date(mockData.datetime).toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric' });
 
 	return (
-		<div className={`flex w-[75%] lg:w-[70%] p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
+		<div className={`flex flex-col sm:flex-row items-center w-[80%] md:w-[75%] lg:w-[70%] p-6 lg:p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
             <Image
-                className="aspect-video h-72 w-96 rounded-md"
+                className="h-48 sm:h-60 sm:w-5/12 mb-4 sm:mb-0 rounded-md"
                 src="/images/ArticleImage.png"
                 alt="Featured Image"
-                width={320}
+                width={384}
                 height={240}
                 priority
             />
-            <div className="flex flex-col justify-center w-full ml-14 mr-4">
+            <div className="flex flex-col justify-center w-full ml-8 lg:ml-14 mr-8 sm:mr-4">
                 <div className="text-sm text-primary-600 dark:text-primary-100">
                     {tags}
                 </div>
                 <div className="text-3xl font-bold text-title my-2">
                     {mockData.title}
                 </div>
-                <div className="text-justify my-4" 
+                <div className="text-justify my-1 sm:my-4" 
                     style={{
                         display: "-webkit-box",
                         WebkitLineClamp: "4",
