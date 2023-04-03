@@ -4,7 +4,7 @@ const nextConfig = {
 		appDir: true,
 	},
 	images: {
-		domains: ["https://picsum.photos/"], // Lorem Pictures. Replace this later on.
+		domains: ["picsum.photos"], // Lorem Pictures. Replace this later on.
 	},
 }
 
