@@ -65,7 +65,7 @@ export default function FeaturedPost() {
     const datetime = new Date(mockData.datetime).toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric' });
 
 	return (
-		<div className={`flex flex-col sm:flex-row items-center w-[80%] md:w-[75%] lg:w-[70%] p-6 lg:p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
+		<div className={`flex flex-col sm:flex-row items-center w-[70%] sm:w-[85%] md:w-[85%] lg:w-[75%] xl:w-[70%] p-6 lg:p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
             <Image
                 className="h-48 sm:h-60 sm:w-5/12 mb-4 sm:mb-0 rounded-md"
                 src={mockData.imgsrc}
@@ -78,23 +78,17 @@ export default function FeaturedPost() {
                 <div className="text-sm text-primary-600 dark:text-primary-100">
                     {tags}
                 </div>
-                <div className="text-3xl font-bold text-title my-2">
+                <div className="text-2xl sm:text-3xl font-bold text-title my-2 line-clamp-2">
                     {mockData.title}
                 </div>
-                <div className="text-justify my-1 sm:my-4" 
-                    style={{
-                        display: "-webkit-box",
-                        WebkitLineClamp: "4",
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden"
-                    }}>
+                <div className="text-justify text-sm sm:text-base my-1 sm:my-2 line-clamp-4">
                     {mockData.body}
                 </div>
-                <div className="flex justify-between mt-2">
-                    <div className="flex items-center gap-2 text-sm font-semibold">
+                <div className="flex justify-between mt-2 text-xs sm:text-sm font-semibold">
+                    <div className="flex items-center gap-2">
                         READ MORE <BsFillArrowRightCircleFill />
                     </div>
-                    <div className="flex items-center gap-1 text-sm font-semibold">
+                    <div className="flex items-center gap-1">
                         <BiTimeFive /> <span>{datetime}</span>
                     </div>
                 </div>
