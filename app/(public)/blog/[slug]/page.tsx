@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 interface Post {
+	id: string
 	title: string
 	body: string
 	tags: string[]
@@ -12,6 +13,7 @@ interface Post {
 
 // please delete later on
 const mockData = {
+	id: "1",
 	title: "The Science of Geometry",
 	body: `Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects in space. It is a fundamental field of study that has been in existence for thousands of years, dating back to ancient civilizations such as the Greeks, Egyptians, and Babylonians. The science of geometry has played a significant role in the development of various branches of science and engineering, including architecture, physics, and computer graphics. In this article, we will delve deeper into the fascinating world of geometry, exploring its history, concepts, and practical applications in modern-day society.
 

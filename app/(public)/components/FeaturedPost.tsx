@@ -5,6 +5,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs"
 import { BiTimeFive } from "react-icons/bi"
 
 interface Post {
+    id: string
 	title: string
 	body: string
 	tags: string[]
@@ -20,6 +21,7 @@ const inter = Inter({
 })
 
 const mockData = {
+    id: "1",
 	title: "The Science of Geometry",
 	body: `Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects in space. It is a fundamental field of study that has been in existence for thousands of years, dating back to ancient civilizations such as the Greeks, Egyptians, and Babylonians. The science of geometry has played a significant role in the development of various branches of science and engineering, including architecture, physics, and computer graphics. In this article, we will delve deeper into the fascinating world of geometry, exploring its history, concepts, and practical applications in modern-day society.
 
@@ -54,7 +56,7 @@ const mockData = {
 	In conclusion, geometry is a fascinating field of mathematics with a rich history and practical applications in many areas of science and engineering. From the ancient Egyptians to modern-day architects and engineers, geometry has been used to solve practical problems and create aesthetically pleasing designs. The concepts of points, lines, angles, and shapes are the building blocks of geometry, and they provide a framework for understanding the physical world around us. As technology continues to advance, the applications of geometry will continue to grow and evolve, and we can expect to see even more innovative and practical uses of this fundamental field of mathematics.`,
 	tags: ["mathematics", "science"],
 	author: "Jude",
-	imgsrc: "https://picsum.photos/1024", //1024 x 1024
+	imgsrc: "/images/ArticleImage.png", //1024 x 1024
 	datetime: Date.now(),
 } as Post
 
@@ -66,7 +68,7 @@ export default function FeaturedPost() {
 		<div className={`flex flex-col sm:flex-row items-center w-[80%] md:w-[75%] lg:w-[70%] p-6 lg:p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
             <Image
                 className="h-48 sm:h-60 sm:w-5/12 mb-4 sm:mb-0 rounded-md"
-                src="/images/ArticleImage.png"
+                src={mockData.imgsrc}
                 alt="Featured Image"
                 width={384}
                 height={240}
