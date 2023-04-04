@@ -65,7 +65,7 @@ export default function FeaturedPost() {
     const datetime = new Date(mockData.datetime).toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric' });
 
 	return (
-		<div className={`flex flex-col sm:flex-row items-center w-[70%] sm:w-[85%] md:w-[85%] lg:w-[75%] xl:w-[70%] p-6 lg:p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
+		<div className={`flex flex-col sm:flex-row items-center w-[70%] sm:w-[85%] md:w-[85%] lg:w-[75%] xl:w-[70%] mt-10 p-6 lg:p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
             <Image
                 className="h-48 sm:h-60 sm:w-5/12 mb-4 sm:mb-0 rounded-md"
                 src={mockData.imgsrc}

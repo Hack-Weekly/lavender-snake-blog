@@ -21,7 +21,7 @@ export default function PostCard(postCardProps: PostCardProps){
     return (
         <div className="flex flex-row items-center p-2 bg-card-bg rounded-lg cursor-pointer drop-shadow-sm hover:drop-shadow-md">
             <Image 
-                className="block h-28 min-w-1/3 max-w-1/3 md:h-28"
+                className="block h-28 min-w-1/3 max-w-1/3 md:h-28 lg:h-32 xl:h-36 rounded-md"
                 src={postCardProps.postData.imgsrc}
                 alt="Post Image"
                 width={384}
@@ -31,13 +31,13 @@ export default function PostCard(postCardProps: PostCardProps){
                 <div className="text-xs text-primary-600 dark:text-primary-100">
                     {tags}
                 </div>
-                <div className="text-base lg:text-lg lg:leading-6 font-bold text-title line-clamp-2">
+                <div className="mb-2 text-base lg:text-lg md:leading-5 lg:leading-6 font-bold text-title line-clamp-2">
                     {postCardProps.postData.title}
                 </div>
-                <div className="text-sm text-justify my-2 hidden xl:line-clamp-1">
+                <div className="text-sm text-justify hidden xs:line-clamp-1 md:hidden lg:line-clamp-1 xl:line-clamp-2">
                     {postCardProps.postData.body}
                 </div>
-                <div className="flex flex-row justify-between text-xs">
+                <div className="flex flex-row justify-between text-xs xs:mt-2 md:mt-0 lg:mt-2">
                     <div className="flex items-center gap-2 font-semibold">
                         READ MORE <BsFillArrowRightCircleFill />
                     </div>
