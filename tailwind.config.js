@@ -57,7 +57,19 @@ module.exports = {
 				"grey-20": "#333333",
 				"grey-redtint": "#F7F2F2",
 				"title": "#24248E",
+				"primary-bg": "#F4F4EC",
+				"card-bg": "#FAFAFA",
 
+			},
+			minWidth: {
+				"1/2": "50%",
+				"1/3": "33%",
+				"1/4": "25%",
+			},
+			maxWidth: {
+				"1/2": "50%",
+				"1/3": "33%",
+				"1/4": "25%",
 			},
 			fontFamily: {
 				serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
