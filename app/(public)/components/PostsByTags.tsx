@@ -50,7 +50,7 @@ const posts: Post[] = [
 
 export default function PostsByTags(){
     return (
-        <div className="mx-2 mt-8 flex flex-col gap-2">
+        <div className="mx-2 mt-8 flex flex-col gap-2 md:grid md:grid-cols-2">
 			{posts.map((post, index) => {
 				return (
 					<PostCard 

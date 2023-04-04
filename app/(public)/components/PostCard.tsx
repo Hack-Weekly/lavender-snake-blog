@@ -19,25 +19,25 @@ export default function PostCard(postCardProps: PostCardProps){
     const tags = postCardProps.postData.tags.map((item) => item.toUpperCase()).join(", ");
     const datetime = new Date(postCardProps.postData.datetime).toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric' });
     return (
-        <div className="flex flex-row p-2 bg-card-bg rounded-lg drop-shadow-md">
+        <div className="flex flex-row items-center p-2 bg-card-bg rounded-lg cursor-pointer drop-shadow-sm hover:drop-shadow-md">
             <Image 
-                className="block h-24 min-w-1/3 max-w-1/3"
+                className="block h-28 min-w-1/3 max-w-1/3 md:h-28"
                 src={postCardProps.postData.imgsrc}
                 alt="Post Image"
                 width={384}
                 height={240}
             />
-            <div className="flex flex-col justify-center ml-2 xs:ml-4">
+            <div className="w-full flex flex-col justify-center ml-2 xs:ml-4">
                 <div className="text-xs text-primary-600 dark:text-primary-100">
                     {tags}
                 </div>
-                <div className="text-base font-bold text-title line-clamp-2 ">
+                <div className="text-base lg:text-lg lg:leading-6 font-bold text-title line-clamp-2">
                     {postCardProps.postData.title}
                 </div>
-                <div className="text-sm text-justify my-2 hidden">
+                <div className="text-sm text-justify my-2 hidden xl:line-clamp-1">
                     {postCardProps.postData.body}
                 </div>
-                <div className="flex flex-row-reverse justify-between text-xs">
+                <div className="flex flex-row justify-between text-xs">
                     <div className="flex items-center gap-2 font-semibold">
                         READ MORE <BsFillArrowRightCircleFill />
                     </div>
