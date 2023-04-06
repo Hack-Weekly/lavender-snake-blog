@@ -68,7 +68,7 @@ export default function SnakeGame() {
 					</span>
 				</span>
 			</div>
-			<div className="relative h-[300px] w-[600px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
+			<div className="relative h-[400px] w-[800px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
 				{gameState === "GAME_OVER" && (
 					<div className="absolute inset-0 flex h-full w-full items-center justify-center">
 						<div className="select-none text-3xl text-white">Game Over</div>
