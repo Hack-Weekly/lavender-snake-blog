@@ -1,3 +1,9 @@
+import SnakeGame from "./SnakeGame"
+
 export default function Team() {
-	return <div className="text-2xl">Team</div>
+	return (
+		<div>
+			<SnakeGame />
+		</div>
+	)
 }
