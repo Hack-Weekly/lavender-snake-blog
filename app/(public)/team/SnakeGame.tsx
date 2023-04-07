@@ -5,13 +5,15 @@ import { Coordinate, GameState } from "./types"
 import {
 	CANVAS_HEIGHT,
 	CANVAS_WIDTH,
+	GAME_HEIGHT,
+	GAME_WIDTH,
 	INITIAL_GAME_STATE,
 	INITIAL_SPAWN_COORDINATES,
-	MEMBER_PORTRAIT_COORDINATES,
 	SEGMENT_SIZE,
 	SNAKE_TAIL_LENGTH,
 } from "./constants"
 import { useSnakeGame } from "./useSnakeGame"
+import MemberAvatarsOverlay from "./MemberAvatarsOverlay"
 
 // Entry point
 export default function SnakeGame() {
@@ -56,13 +58,15 @@ export default function SnakeGame() {
 	return (
 		<div className="flex flex-col items-center justify-center space-y-8">
 			<NoticeBoard score={score} highscore={highscore} />
-			<div className="relative h-[400px] w-[800px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
+			<div
+				className={`relative h-[${GAME_HEIGHT}px] w-[${GAME_WIDTH}px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1`}
+			>
 				{/* Overlay over the game */}
 				<div className="absolute inset-0 flex h-full w-full items-center justify-center">
 					{gameState === "GAME_OVER" ? (
 						<div className="select-none text-3xl text-white">Game Over</div>
 					) : (
-						<MemberCanvas />
+						<MemberAvatarsOverlay />
 					)}
 				</div>
 				{/* Game container */}
@@ -131,46 +135,6 @@ const Canvas = forwardRef<
 		/>
 	)
 })
-
-function MemberCanvas() {
-	const canvasRef = useRef<HTMLCanvasElement | null>(null)
-
-	useEffect(() => {
-		if (!canvasRef) return
-
-		const canvas = (canvasRef as React.RefObject<HTMLCanvasElement>).current
-		if (!canvas) return
-
-		const ctx = canvas.getContext("2d")
-		if (!ctx) return
-
-		// Draw member portraits
-		for (const coordinate of MEMBER_PORTRAIT_COORDINATES) {
-			const img = new Image()
-			img.width = 50
-			img.height = 50
-			img.src = "https://robohash.org/snakebyte"
-			ctx.imageSmoothingEnabled = true
-			ctx.imageSmoothingQuality = "high"
-			ctx.drawImage(img, coordinate.x, coordinate.y, img.width, img.height)
-		}
-
-		return () => {
-			ctx.clearRect(0, 0, canvas.width, canvas.height)
-		}
-	}, [])
-
-	if (!canvasRef) return null
-
-	return (
-		<canvas
-			ref={canvasRef}
-			className="transparent h-full w-full"
-			width={CANVAS_WIDTH} // internal canvas width
-			height={CANVAS_HEIGHT} // internal canvas height
-		/>
-	)
-}
 
 // Draws stuffs on the canvas
 function draw(

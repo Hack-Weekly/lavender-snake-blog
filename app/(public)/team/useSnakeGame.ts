@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react"
 import {
+	AVATAR_SIZE,
 	CANVAS_HEIGHT,
 	CANVAS_WIDTH,
 	INITIAL_DIRECTION,
 	INITIAL_SPAWN_COORDINATES,
 	SEGMENT_SIZE,
+	SIZE_SCALE_DIFF,
 	SNAKE_TAIL_LENGTH,
 	SPEED,
 } from "./constants"
 import { Coordinate, Direction, GameState } from "./types"
 import { useInterval } from "./useInterval"
+import { members } from "./MemberAvatarsOverlay"
 
 // Helpers
 const moveSnake = {
@@ -144,6 +147,22 @@ export function useSnakeGame(
 		}
 	}
 
+	const getSnakeCollisionTargetAvatar = () => {
+		return (
+			members.find((member) => {
+				const isXColliding =
+					headCoordinate.x >= member.coordinates.x * SIZE_SCALE_DIFF &&
+					headCoordinate.x <=
+						(member.coordinates.x + AVATAR_SIZE) * SIZE_SCALE_DIFF
+				const isYColliding =
+					headCoordinate.y >= member.coordinates.y * SIZE_SCALE_DIFF &&
+					headCoordinate.y <=
+						(member.coordinates.y + AVATAR_SIZE) * SIZE_SCALE_DIFF
+				return isXColliding && isYColliding
+			})?.name || undefined
+		)
+	}
+
 	const handleFrameUpdate = () => {
 		let newSegmentCoordinates: Coordinate[] | undefined
 
@@ -155,6 +174,13 @@ export function useSnakeGame(
 		if (food && isSnakeGoingToEatFoodNextFrame()) {
 			setSegments([food, ...segments])
 			setFood(undefined)
+			return
+		}
+
+		const collidedAvatar = getSnakeCollisionTargetAvatar()
+		if (collidedAvatar) {
+			console.log(collidedAvatar)
+			setGameState("PAUSED")
 			return
 		}
 
