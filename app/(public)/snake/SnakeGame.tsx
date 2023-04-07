@@ -54,26 +54,15 @@ export default function SnakeGame() {
 
 	return (
 		<div className="flex flex-col items-center justify-center space-y-8">
-			<div className="flex space-x-24">
-				<span>
-					Score:{" "}
-					<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
-						{score}
-					</span>
-				</span>
-				<span>
-					Highscore:{" "}
-					<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
-						{highscore}
-					</span>
-				</span>
-			</div>
-			<div className="relative h-[300px] w-[600px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
+			<NoticeBoard score={score} highscore={highscore} />
+			<div className="relative h-[400px] w-[800px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
+				{/* Overlay over the game */}
 				{gameState === "GAME_OVER" && (
 					<div className="absolute inset-0 flex h-full w-full items-center justify-center">
 						<div className="select-none text-3xl text-white">Game Over</div>
 					</div>
 				)}
+				{/* Game container */}
 				<Canvas ref={canvasRef} draw={drawFn} onKeyDown={handleKeydown} />
 			</div>
 			<div className="w-fit rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
@@ -172,4 +161,29 @@ function draw(
 		ctx.fillStyle = `rgba(255, 255, 255, ${0.1 * (tail.length - i)})`
 		ctx.fillRect(x, y, SEGMENT_SIZE, SEGMENT_SIZE)
 	}
+}
+
+function NoticeBoard({
+	score,
+	highscore,
+}: {
+	score: number
+	highscore: number
+}) {
+	return (
+		<div className="flex space-x-24">
+			<span>
+				Score:{" "}
+				<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+					{score}
+				</span>
+			</span>
+			<span>
+				Highscore:{" "}
+				<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+					{highscore}
+				</span>
+			</span>
+		</div>
+	)
 }
