@@ -28,6 +28,8 @@ export default function SnakeGame() {
 		setCollidedMember
 	)
 
+	console.log(food, segments[0])
+
 	const score = segments.length - INITIAL_SPAWN_COORDINATES.length
 
 	const drawFn = (ctx: CanvasRenderingContext2D) =>
