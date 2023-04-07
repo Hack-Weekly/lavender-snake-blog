@@ -84,6 +84,7 @@ export function useSnakeGame(
 			case "ArrowUp":
 			case "w":
 			case "W":
+				e.preventDefault()
 				resumeGameIfPaused()
 				if (direction === "DOWN") return // prevent 180 degree turn
 				if (segments[0].x === segments[1].x) return // prevent accidental 180 degree turn when user change direction too fast
@@ -92,6 +93,7 @@ export function useSnakeGame(
 			case "ArrowDown":
 			case "s":
 			case "S":
+				e.preventDefault()
 				resumeGameIfPaused()
 				if (direction === "UP") return // prevent 180 degree turn
 				if (segments[0].x === segments[1].x) return // prevent accidental 180 degree turn when user change direction too fast
@@ -100,6 +102,7 @@ export function useSnakeGame(
 			case "ArrowLeft":
 			case "a":
 			case "A":
+				e.preventDefault()
 				resumeGameIfPaused()
 				if (direction === "RIGHT") return // prevent 180 degree turn
 				if (segments[0].y === segments[1].y) return // prevent accidental 180 degree turn when user change direction too fast
@@ -108,6 +111,7 @@ export function useSnakeGame(
 			case "ArrowRight":
 			case "d":
 			case "D":
+				e.preventDefault()
 				resumeGameIfPaused()
 				if (direction === "LEFT") return // prevent 180 degree turn
 				if (segments[0].y === segments[1].y) return // prevent accidental 180 degree turn when user change direction too fast
