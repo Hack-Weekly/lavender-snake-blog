@@ -7,6 +7,7 @@ import {
 	CANVAS_WIDTH,
 	INITIAL_GAME_STATE,
 	INITIAL_SPAWN_COORDINATES,
+	MEMBER_PORTRAIT_COORDINATES,
 	SEGMENT_SIZE,
 	SNAKE_TAIL_LENGTH,
 } from "./constants"
@@ -57,11 +58,13 @@ export default function SnakeGame() {
 			<NoticeBoard score={score} highscore={highscore} />
 			<div className="relative h-[400px] w-[800px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
 				{/* Overlay over the game */}
-				{gameState === "GAME_OVER" && (
-					<div className="absolute inset-0 flex h-full w-full items-center justify-center">
+				<div className="absolute inset-0 flex h-full w-full items-center justify-center">
+					{gameState === "GAME_OVER" ? (
 						<div className="select-none text-3xl text-white">Game Over</div>
-					</div>
-				)}
+					) : (
+						<MemberCanvas />
+					)}
+				</div>
 				{/* Game container */}
 				<Canvas ref={canvasRef} draw={drawFn} onKeyDown={handleKeydown} />
 			</div>
@@ -129,6 +132,46 @@ const Canvas = forwardRef<
 	)
 })
 
+function MemberCanvas() {
+	const canvasRef = useRef<HTMLCanvasElement | null>(null)
+
+	useEffect(() => {
+		if (!canvasRef) return
+
+		const canvas = (canvasRef as React.RefObject<HTMLCanvasElement>).current
+		if (!canvas) return
+
+		const ctx = canvas.getContext("2d")
+		if (!ctx) return
+
+		// Draw member portraits
+		for (const coordinate of MEMBER_PORTRAIT_COORDINATES) {
+			const img = new Image()
+			img.width = 50
+			img.height = 50
+			img.src = "https://robohash.org/snakebyte"
+			ctx.imageSmoothingEnabled = true
+			ctx.imageSmoothingQuality = "high"
+			ctx.drawImage(img, coordinate.x, coordinate.y, img.width, img.height)
+		}
+
+		return () => {
+			ctx.clearRect(0, 0, canvas.width, canvas.height)
+		}
+	}, [])
+
+	if (!canvasRef) return null
+
+	return (
+		<canvas
+			ref={canvasRef}
+			className="transparent h-full w-full"
+			width={CANVAS_WIDTH} // internal canvas width
+			height={CANVAS_HEIGHT} // internal canvas height
+		/>
+	)
+}
+
 // Draws stuffs on the canvas
 function draw(
 	ctx: CanvasRenderingContext2D,
@@ -138,6 +181,17 @@ function draw(
 	const head = segments[0]
 	const body = segments.slice(1, segments.length - SNAKE_TAIL_LENGTH)
 	const tail = segments.slice(segments.length - SNAKE_TAIL_LENGTH)
+
+	// Draw member portraits
+	// for (const coordinate of MEMBER_PORTRAIT_COORDINATES) {
+	// 	const img = new Image()
+	// 	img.width = 50
+	// 	img.height = 50
+	// 	img.src = "https://robohash.org/snakebyte"
+	// 	ctx.imageSmoothingEnabled = true
+	// 	ctx.imageSmoothingQuality = "high"
+	// 	ctx.drawImage(img, coordinate.x, coordinate.y, img.width, img.height)
+	// }
 
 	// Draw food
 	if (food) {
