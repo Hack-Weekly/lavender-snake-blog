@@ -6,7 +6,6 @@ import {
 	INITIAL_DIRECTION,
 	INITIAL_SPAWN_COORDINATES,
 	SEGMENT_SIZE,
-	SIZE_SCALE_DIFF,
 	SNAKE_TAIL_LENGTH,
 	SPEED,
 } from "./constants"
@@ -161,13 +160,11 @@ export function useSnakeGame(
 		return (
 			members.find((member) => {
 				const isXColliding =
-					headCoordinate.x >= member.coordinates.x * SIZE_SCALE_DIFF &&
-					headCoordinate.x <=
-						(member.coordinates.x + AVATAR_SIZE) * SIZE_SCALE_DIFF
+					headCoordinate.x >= member.coordinates.x &&
+					headCoordinate.x <= member.coordinates.x + AVATAR_SIZE
 				const isYColliding =
-					headCoordinate.y >= member.coordinates.y * SIZE_SCALE_DIFF &&
-					headCoordinate.y <=
-						(member.coordinates.y + AVATAR_SIZE) * SIZE_SCALE_DIFF
+					headCoordinate.y >= member.coordinates.y &&
+					headCoordinate.y <= member.coordinates.y + AVATAR_SIZE
 				return isXColliding && isYColliding
 			})?.name || undefined
 		)

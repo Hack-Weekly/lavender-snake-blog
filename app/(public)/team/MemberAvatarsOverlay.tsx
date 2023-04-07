@@ -9,8 +9,8 @@ import ToxAvatar from "./assets/images/tox.png"
 import VitiligoAvatar from "./assets/images/vitiligo.webp"
 import XanurobaAvatar from "./assets/images/xanuroba.webp"
 
-// Note that coordinates are relative to GAME_WIDTH and GAME_HEIGHT (not the CANVAS_WIDTH and CANVAS_HEIGHT)
-// The maximum value of x and y is {GAME_WIDTH - AVATAR_SIZE} and {GAME_HEIGHT - AVATAR_SIZE} respectively
+// Note that coordinates are relative to CANVAS_WIDTH and CANVAS_HEIGHT
+// The maximum value of x and y is {CANVAS_WIDTH - AVATAR_SIZE} and {CANVAS_HEIGHT - AVATAR_SIZE} respectively
 export const members = [
 	{
 		name: "Ajoy",
