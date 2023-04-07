@@ -1,3 +1,5 @@
+type GameMode = "MEET_TEAM" | "CLASSIC"
+
 type GameState = "PLAYING" | "PAUSED" | "GAME_OVER"
 
 type Direction = "UP" | "DOWN" | "LEFT" | "RIGHT"
@@ -7,4 +9,4 @@ interface Coordinate {
 	y: number
 }
 
-export type { GameState, Direction, Coordinate }
+export type { GameMode, GameState, Direction, Coordinate }

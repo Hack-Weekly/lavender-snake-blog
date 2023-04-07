@@ -10,7 +10,7 @@ import {
 	SNAKE_TAIL_LENGTH,
 	SPEED,
 } from "./constants"
-import { Coordinate, Direction, GameState } from "./types"
+import { Coordinate, Direction, GameMode, GameState } from "./types"
 import { useInterval } from "./useInterval"
 import { members } from "./MemberAvatarsOverlay"
 
@@ -52,6 +52,7 @@ function spawnFoodRandom(): Coordinate {
 
 // Controls the logic of the game
 export function useSnakeGame(
+	gameMode: GameMode,
 	gameState: GameState,
 	setGameState: React.Dispatch<React.SetStateAction<GameState>>,
 	setCollidedMember: React.Dispatch<React.SetStateAction<string>>
@@ -127,6 +128,7 @@ export function useSnakeGame(
 	}
 
 	const isSnakeGoingToEatFoodNextFrame = () => {
+		if (gameMode !== "CLASSIC") return false
 		if (!food) return false
 
 		switch (direction) {
@@ -154,6 +156,8 @@ export function useSnakeGame(
 	}
 
 	const getSnakeCollisionTargetAvatar = () => {
+		if (gameMode !== "MEET_TEAM") return undefined
+
 		return (
 			members.find((member) => {
 				const isXColliding =

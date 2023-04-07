@@ -1,7 +1,7 @@
 "use client"
 
 import { forwardRef, useEffect, useRef, useState } from "react"
-import { Coordinate, GameState } from "./types"
+import { Coordinate, GameState, GameMode } from "./types"
 import {
 	CANVAS_HEIGHT,
 	CANVAS_WIDTH,
@@ -18,12 +18,13 @@ import MemberAvatarsOverlay from "./MemberAvatarsOverlay"
 // Entry point
 export default function SnakeGame() {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null)
-	const [gameMode, setGameMode] = useState<"MEET_TEAM" | "CLASSIC">("MEET_TEAM")
+	const [gameMode, setGameMode] = useState<GameMode>("MEET_TEAM")
 	const [gameState, setGameState] = useState<GameState>(INITIAL_GAME_STATE)
 	const [highscore, setHighscore] = useState(0)
 	const [collidedMember, setCollidedMember] = useState("")
 
 	const { segments, food, handleKeydown, resetGame } = useSnakeGame(
+		gameMode,
 		gameState,
 		setGameState,
 		setCollidedMember
@@ -61,7 +62,7 @@ export default function SnakeGame() {
 
 	return (
 		<div className="flex flex-col items-center justify-center space-y-8">
-			<NoticeBoard score={score} highscore={highscore} />
+			<NoticeBoard gameMode={gameMode} score={score} highscore={highscore} />
 			<div
 				className={`relative h-[${GAME_HEIGHT}px] w-[${GAME_WIDTH}px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1`}
 			>
@@ -80,29 +81,47 @@ export default function SnakeGame() {
 				{/* Game container */}
 				<Canvas ref={canvasRef} draw={drawFn} onKeyDown={handleKeydown} />
 			</div>
-			<div className="w-fit rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
-				{gameState === "GAME_OVER" ? (
+			<div className="flex space-x-8">
+				<div className="w-fit rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
+					{gameState === "GAME_OVER" ? (
+						<button
+							className="w-64 bg-white px-6 py-2 text-black"
+							onClick={restartGame}
+						>
+							Reset
+						</button>
+					) : gameState === "PLAYING" ? (
+						<button
+							className="w-64 bg-white px-6 py-2 text-black"
+							onClick={pauseGame}
+						>
+							Pause
+						</button>
+					) : (
+						<button
+							className="w-64 bg-white px-6 py-2 text-black"
+							onClick={playGame}
+						>
+							{gameMode === "CLASSIC" ? "Play" : "Resume"}
+						</button>
+					)}
+				</div>
+				<div className="w-fit rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
 					<button
-						className="w-32 bg-white px-6 py-2 text-black"
-						onClick={restartGame}
+						className="w-64 bg-white px-6 py-2 text-black disabled:cursor-not-allowed disabled:text-gray-200"
+						disabled={gameState !== "PAUSED"}
+						onClick={() => {
+							if (gameMode === "MEET_TEAM") {
+								setGameMode("CLASSIC")
+							} else {
+								setGameMode("MEET_TEAM")
+								setCollidedMember("")
+							}
+						}}
 					>
-						Reset
+						{gameMode === "MEET_TEAM" ? "Feed Lavender Buddy" : "Meet The Team"}
 					</button>
-				) : gameState === "PLAYING" ? (
-					<button
-						className="w-32 bg-white px-6 py-2 text-black"
-						onClick={pauseGame}
-					>
-						Pause
-					</button>
-				) : (
-					<button
-						className="w-32 bg-white px-6 py-2 text-black"
-						onClick={playGame}
-					>
-						{gameMode === "CLASSIC" ? "Play" : "Resume"}
-					</button>
-				)}
+				</div>
 			</div>
 		</div>
 	)
@@ -160,17 +179,6 @@ function draw(
 	const body = segments.slice(1, segments.length - SNAKE_TAIL_LENGTH)
 	const tail = segments.slice(segments.length - SNAKE_TAIL_LENGTH)
 
-	// Draw member portraits
-	// for (const coordinate of MEMBER_PORTRAIT_COORDINATES) {
-	// 	const img = new Image()
-	// 	img.width = 50
-	// 	img.height = 50
-	// 	img.src = "https://robohash.org/snakebyte"
-	// 	ctx.imageSmoothingEnabled = true
-	// 	ctx.imageSmoothingQuality = "high"
-	// 	ctx.drawImage(img, coordinate.x, coordinate.y, img.width, img.height)
-	// }
-
 	// Draw food
 	if (food) {
 		ctx.fillStyle = "red" // TODO: Use color from design system
@@ -196,26 +204,36 @@ function draw(
 }
 
 function NoticeBoard({
+	gameMode,
 	score,
 	highscore,
 }: {
+	gameMode: GameMode
 	score: number
 	highscore: number
 }) {
 	return (
 		<div className="flex space-x-24">
-			<span>
-				Score:{" "}
-				<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
-					{score}
+			{gameMode === "MEET_TEAM" ? (
+				<span>
+					Move Lavender Buddy to the member you&apos;re interested in!
 				</span>
-			</span>
-			<span>
-				Highscore:{" "}
-				<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
-					{highscore}
-				</span>
-			</span>
+			) : (
+				<>
+					<span>
+						Score:{" "}
+						<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+							{score}
+						</span>
+					</span>
+					<span>
+						Highscore:{" "}
+						<span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+							{highscore}
+						</span>
+					</span>
+				</>
+			)}
 		</div>
 	)
 }
