@@ -53,13 +53,15 @@ function spawnFoodRandom(): Coordinate {
 // Controls the logic of the game
 export function useSnakeGame(
 	gameState: GameState,
-	setGameState: React.Dispatch<React.SetStateAction<GameState>>
+	setGameState: React.Dispatch<React.SetStateAction<GameState>>,
+	setCollidedMember: React.Dispatch<React.SetStateAction<string>>
 ) {
 	const [segments, setSegments] = useState<Coordinate[]>(
 		INITIAL_SPAWN_COORDINATES
 	)
 	const [food, setFood] = useState<Coordinate | undefined>(undefined)
 	const [direction, setDirection] = useState<Direction>(INITIAL_DIRECTION)
+	const [isCollidingWithAvatar, setIsCollidingWithAvatar] = useState(false)
 
 	const headCoordinate = segments[0]
 	const isTouchingTopBoundary = headCoordinate.y <= 0
@@ -101,6 +103,10 @@ export function useSnakeGame(
 				if (segments[0].y === segments[1].y) return // prevent accidental 180 degree turn when user change direction too fast
 				setDirection("RIGHT")
 				break
+		}
+
+		if (gameState === "PAUSED") {
+			setGameState("PLAYING")
 		}
 	}
 
@@ -178,10 +184,15 @@ export function useSnakeGame(
 		}
 
 		const collidedAvatar = getSnakeCollisionTargetAvatar()
-		if (collidedAvatar) {
-			console.log(collidedAvatar)
+		if (collidedAvatar && !isCollidingWithAvatar) {
+			setIsCollidingWithAvatar(true)
 			setGameState("PAUSED")
+			setCollidedMember(collidedAvatar)
 			return
+		} else if (collidedAvatar && isCollidingWithAvatar) {
+			setCollidedMember("")
+		} else if (!collidedAvatar && isCollidingWithAvatar) {
+			setIsCollidingWithAvatar(false)
 		}
 
 		switch (direction) {

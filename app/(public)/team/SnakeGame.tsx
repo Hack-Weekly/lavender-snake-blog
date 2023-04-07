@@ -18,17 +18,21 @@ import MemberAvatarsOverlay from "./MemberAvatarsOverlay"
 // Entry point
 export default function SnakeGame() {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null)
+	const [gameMode, setGameMode] = useState<"MEET_TEAM" | "CLASSIC">("MEET_TEAM")
 	const [gameState, setGameState] = useState<GameState>(INITIAL_GAME_STATE)
 	const [highscore, setHighscore] = useState(0)
+	const [collidedMember, setCollidedMember] = useState("")
 
 	const { segments, food, handleKeydown, resetGame } = useSnakeGame(
 		gameState,
-		setGameState
+		setGameState,
+		setCollidedMember
 	)
 
 	const score = segments.length - INITIAL_SPAWN_COORDINATES.length
 
-	const drawFn = (ctx: CanvasRenderingContext2D) => draw(ctx, segments, food)
+	const drawFn = (ctx: CanvasRenderingContext2D) =>
+		draw(ctx, segments, gameMode === "CLASSIC" ? food : undefined)
 
 	const focusCanvas = () => {
 		if (!canvasRef.current) return
@@ -63,10 +67,14 @@ export default function SnakeGame() {
 			>
 				{/* Overlay over the game */}
 				<div className="absolute inset-0 flex h-full w-full items-center justify-center">
-					{gameState === "GAME_OVER" ? (
+					{gameMode === "MEET_TEAM" && <MemberAvatarsOverlay />}
+					{gameMode === "MEET_TEAM" && collidedMember && (
+						<div className="absolute z-50 m-1 flex h-full w-full select-none items-center justify-center bg-black/80 text-3xl text-white">
+							{collidedMember}
+						</div>
+					)}
+					{gameMode === "CLASSIC" && gameState === "GAME_OVER" && (
 						<div className="select-none text-3xl text-white">Game Over</div>
-					) : (
-						<MemberAvatarsOverlay />
 					)}
 				</div>
 				{/* Game container */}
@@ -75,18 +83,24 @@ export default function SnakeGame() {
 			<div className="w-fit rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1">
 				{gameState === "GAME_OVER" ? (
 					<button
-						className="bg-white px-6 py-2 text-black"
+						className="w-32 bg-white px-6 py-2 text-black"
 						onClick={restartGame}
 					>
 						Reset
 					</button>
 				) : gameState === "PLAYING" ? (
-					<button className="bg-white px-6 py-2 text-black" onClick={pauseGame}>
+					<button
+						className="w-32 bg-white px-6 py-2 text-black"
+						onClick={pauseGame}
+					>
 						Pause
 					</button>
 				) : (
-					<button className="bg-white px-6 py-2 text-black" onClick={playGame}>
-						Play
+					<button
+						className="w-32 bg-white px-6 py-2 text-black"
+						onClick={playGame}
+					>
+						{gameMode === "CLASSIC" ? "Play" : "Resume"}
 					</button>
 				)}
 			</div>

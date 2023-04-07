@@ -65,6 +65,13 @@ export default function MemberAvatarsOverlay() {
 				alt="Ajoy"
 				height={AVATAR_SIZE}
 				width={AVATAR_SIZE}
+				className={`absolute left-[0px] top-[200px] rounded-full`}
+			/>
+			<Image
+				src={EjAvatar}
+				alt="Ej"
+				height={AVATAR_SIZE}
+				width={AVATAR_SIZE}
 				className={`absolute left-[100px] top-[200px] rounded-full`}
 			/>
 			<Image
