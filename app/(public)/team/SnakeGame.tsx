@@ -113,9 +113,11 @@ export default function SnakeGame() {
 						onClick={() => {
 							if (gameMode === "MEET_TEAM") {
 								setGameMode("CLASSIC")
+								focusCanvas()
 							} else {
 								setGameMode("MEET_TEAM")
 								setCollidedMember("")
+								focusCanvas()
 							}
 						}}
 					>
