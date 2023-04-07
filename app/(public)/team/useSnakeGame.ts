@@ -73,11 +73,18 @@ export function useSnakeGame(
 	const isOnLeftSide = headCoordinate.x <= CANVAS_WIDTH / 2
 	const isOnTopSide = headCoordinate.y <= CANVAS_HEIGHT / 2
 
+	const resumeGameIfPaused = () => {
+		if (gameState === "PAUSED") {
+			setGameState("PLAYING")
+		}
+	}
+
 	const handleKeydown = (e: React.KeyboardEvent<HTMLCanvasElement>) => {
 		switch (e.key) {
 			case "ArrowUp":
 			case "w":
 			case "W":
+				resumeGameIfPaused()
 				if (direction === "DOWN") return // prevent 180 degree turn
 				if (segments[0].x === segments[1].x) return // prevent accidental 180 degree turn when user change direction too fast
 				setDirection("UP")
@@ -85,6 +92,7 @@ export function useSnakeGame(
 			case "ArrowDown":
 			case "s":
 			case "S":
+				resumeGameIfPaused()
 				if (direction === "UP") return // prevent 180 degree turn
 				if (segments[0].x === segments[1].x) return // prevent accidental 180 degree turn when user change direction too fast
 				setDirection("DOWN")
@@ -92,6 +100,7 @@ export function useSnakeGame(
 			case "ArrowLeft":
 			case "a":
 			case "A":
+				resumeGameIfPaused()
 				if (direction === "RIGHT") return // prevent 180 degree turn
 				if (segments[0].y === segments[1].y) return // prevent accidental 180 degree turn when user change direction too fast
 				setDirection("LEFT")
@@ -99,14 +108,11 @@ export function useSnakeGame(
 			case "ArrowRight":
 			case "d":
 			case "D":
+				resumeGameIfPaused()
 				if (direction === "LEFT") return // prevent 180 degree turn
 				if (segments[0].y === segments[1].y) return // prevent accidental 180 degree turn when user change direction too fast
 				setDirection("RIGHT")
 				break
-		}
-
-		if (gameState === "PAUSED") {
-			setGameState("PLAYING")
 		}
 	}
 
