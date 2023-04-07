@@ -5,8 +5,6 @@ import { Coordinate, GameState, GameMode } from "./types"
 import {
 	CANVAS_HEIGHT,
 	CANVAS_WIDTH,
-	GAME_HEIGHT,
-	GAME_WIDTH,
 	INITIAL_GAME_STATE,
 	INITIAL_SPAWN_COORDINATES,
 	SEGMENT_SIZE,
@@ -64,7 +62,8 @@ export default function SnakeGame() {
 		<div className="flex flex-col items-center justify-center space-y-8">
 			<NoticeBoard gameMode={gameMode} score={score} highscore={highscore} />
 			<div
-				className={`relative h-[${GAME_HEIGHT}px] w-[${GAME_WIDTH}px] rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1`}
+				className={`relative rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1`}
+				style={{ height: `${CANVAS_HEIGHT}px`, width: `${CANVAS_WIDTH}px` }}
 			>
 				{/* Overlay over the game */}
 				<div className="absolute inset-0 flex h-full w-full items-center justify-center">
