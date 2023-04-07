@@ -6,11 +6,11 @@ const CANVAS_WIDTH = 800 // px; Internal canvas width
 const CANVAS_HEIGHT = 400 // px; Internal canvas height
 const AVATAR_SIZE = 50 // px
 const INITIAL_SPAWN_COORDINATES: Coordinate[] = [
-	{ x: CANVAS_WIDTH / 3, y: CANVAS_HEIGHT / 2 },
-	{ x: CANVAS_WIDTH / 3 - SEGMENT_SIZE, y: CANVAS_HEIGHT / 2 },
-	{ x: CANVAS_WIDTH / 3 - SEGMENT_SIZE * 2, y: CANVAS_HEIGHT / 2 },
-	{ x: CANVAS_WIDTH / 3 - SEGMENT_SIZE * 3, y: CANVAS_HEIGHT / 2 },
-	{ x: CANVAS_WIDTH / 3 - SEGMENT_SIZE * 4, y: CANVAS_HEIGHT / 2 },
+	{ x: CANVAS_WIDTH / 4, y: CANVAS_HEIGHT / 2 },
+	{ x: CANVAS_WIDTH / 4 - SEGMENT_SIZE, y: CANVAS_HEIGHT / 2 },
+	{ x: CANVAS_WIDTH / 4 - SEGMENT_SIZE * 2, y: CANVAS_HEIGHT / 2 },
+	{ x: CANVAS_WIDTH / 4 - SEGMENT_SIZE * 3, y: CANVAS_HEIGHT / 2 },
+	{ x: CANVAS_WIDTH / 4 - SEGMENT_SIZE * 4, y: CANVAS_HEIGHT / 2 },
 ] // px; Where the snake will spawn
 const INITIAL_DIRECTION: Direction = "RIGHT"
 const INITIAL_GAME_STATE: GameState = "PAUSED"
