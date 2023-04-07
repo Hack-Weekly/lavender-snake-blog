@@ -15,107 +15,62 @@ export const members = [
 	{
 		name: "Ajoy",
 		avatar: AjoyAvatar,
-		coordinates: { x: 0, y: 200 },
+		coordinates: { x: 40, y: 320 },
 	},
 	{
 		name: "Ej",
 		avatar: EjAvatar,
-		coordinates: { x: 100, y: 200 },
+		coordinates: { x: 150, y: 20 },
 	},
 	{
 		name: "MagicBeam",
 		avatar: MagicBeamAvatar,
-		coordinates: { x: 200, y: 200 },
+		coordinates: { x: 120, y: 175 },
 	},
 	{
 		name: "MysteryInHoodie",
 		avatar: MysteryInHoodieAvatar,
-		coordinates: { x: 300, y: 200 },
+		coordinates: { x: 350, y: 250 },
 	},
 	{
 		name: "Rollie",
 		avatar: RollieAvatar,
-		coordinates: { x: 400, y: 200 },
+		coordinates: { x: 440, y: 100 },
 	},
 	{
 		name: "Tox",
 		avatar: ToxAvatar,
-		coordinates: { x: 500, y: 200 },
+		coordinates: { x: 650, y: 50 },
 	},
 	{
 		name: "Vitiligo",
 		avatar: VitiligoAvatar,
-		coordinates: { x: 600, y: 200 },
+		coordinates: { x: 600, y: 300 },
 	},
 	{
 		name: "Xanuroba",
 		avatar: XanurobaAvatar,
-		coordinates: { x: 700, y: 200 },
+		coordinates: { x: 710, y: 200 },
 	},
 ]
 
-// Unfortunately, we can't just loop though the members array and render the Image component dynamically
-// because left-[${coordinates.x}px] top-[${coordinates.y}px] will not work. Someone got a solution?
-// But still, we need to export the coordinates to the parent component so that the snake will know when it collides with the avatar
 export default function MemberAvatarsOverlay() {
 	return (
 		<div className="relative h-full w-full bg-transparent">
-			<Image
-				src={AjoyAvatar}
-				alt="Ajoy"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[0px] top-[200px] rounded-full`}
-			/>
-			<Image
-				src={EjAvatar}
-				alt="Ej"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[100px] top-[200px] rounded-full`}
-			/>
-			<Image
-				src={MagicBeamAvatar}
-				alt="MagicBeam"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[200px] top-[200px] rounded-full`}
-			/>
-			<Image
-				src={MysteryInHoodieAvatar}
-				alt="MysteryInHoodie"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[300px] top-[200px] rounded-full`}
-			/>
-			<Image
-				src={RollieAvatar}
-				alt="Rollie"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[400px] top-[200px] rounded-full`}
-			/>
-			<Image
-				src={ToxAvatar}
-				alt="Tox"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[500px] top-[200px] rounded-full`}
-			/>
-			<Image
-				src={VitiligoAvatar}
-				alt="Vitiligo"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[600px] top-[200px] rounded-full`}
-			/>
-			<Image
-				src={XanurobaAvatar}
-				alt="Xanuroba"
-				height={AVATAR_SIZE}
-				width={AVATAR_SIZE}
-				className={`absolute left-[700px] top-[200px] rounded-full`}
-			/>
+			{members.map((member) => (
+				<Image
+					key={member.name}
+					src={member.avatar}
+					alt={member.name}
+					height={AVATAR_SIZE}
+					width={AVATAR_SIZE}
+					className="absolute rounded-full"
+					style={{
+						left: `${member.coordinates.x}px`,
+						top: `${member.coordinates.y}px`,
+					}}
+				/>
+			))}
 		</div>
 	)
 }
