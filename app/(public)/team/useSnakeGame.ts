@@ -117,6 +117,14 @@ export function useSnakeGame(
 				if (segments[0].y === segments[1].y) return // prevent accidental 180 degree turn when user change direction too fast
 				setDirection("RIGHT")
 				break
+			case " ":
+				e.preventDefault()
+				if (gameState === "PLAYING") {
+					setGameState("PAUSED")
+				} else if (gameState === "PAUSED") {
+					setGameState("PLAYING")
+				}
+				break
 		}
 	}
 
