@@ -11,13 +11,17 @@ export default function ThemeToggler() {
 
 	useEffect(() => setMounted(true), [])
 
-	if (!mounted) return null
-
 	return (
 		<div>
-			<button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-				{theme === "light" ? <Moon /> : <Sun />}
-			</button>
+			{mounted ? (
+				<button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+					{theme === "light" ? <Moon /> : <Sun />}
+				</button>
+			) : (
+				<button>
+					<Sun />
+				</button>
+			)}
 		</div>
 	)
 }
