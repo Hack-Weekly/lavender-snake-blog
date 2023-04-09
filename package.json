@@ -10,6 +10,17 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
+		"@tiptap/extension-bold": "^2.0.2",
+		"@tiptap/extension-character-count": "^2.0.2",
+		"@tiptap/extension-code": "^2.0.2",
+		"@tiptap/extension-document": "^2.0.2",
+		"@tiptap/extension-italic": "^2.0.2",
+		"@tiptap/extension-paragraph": "^2.0.2",
+		"@tiptap/extension-strike": "^2.0.2",
+		"@tiptap/extension-text": "^2.0.2",
+		"@tiptap/extension-typography": "^2.0.2",
+		"@tiptap/pm": "^2.0.2",
+		"@tiptap/react": "^2.0.2",
 		"@types/node": "18.15.11",
 		"@types/react": "18.0.31",
 		"@types/react-dom": "18.0.11",

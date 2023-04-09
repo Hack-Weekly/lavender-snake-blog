@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import CommentEditor from "./components/CommentEditor"
 
 interface Post {
 	id: string
@@ -83,7 +84,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 				</div>
 			</article>
 			<div className="w-full px-4 py-4 lg:px-20 lg:py-12">
-				<p className="text-2xl font-light text-neutral-700">COMMENTS</p>
+				<p className="mb-4 text-2xl font-light text-neutral-700">COMMENTS</p>
+				<CommentEditor />
 			</div>
 		</section>
 	)
