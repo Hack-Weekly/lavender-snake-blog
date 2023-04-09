@@ -1,7 +1,7 @@
 import { Extension, textInputRule } from "@tiptap/core"
 
 export const SmileyReplacer = Extension.create({
-	name: "smilieReplacer",
+	name: "smileyReplacer",
 
 	addInputRules() {
 		return [
