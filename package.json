@@ -10,11 +10,20 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
+		"@tiptap/extension-blockquote": "^2.0.2",
 		"@tiptap/extension-bold": "^2.0.2",
+		"@tiptap/extension-bullet-list": "^2.0.2",
 		"@tiptap/extension-character-count": "^2.0.2",
 		"@tiptap/extension-code": "^2.0.2",
+		"@tiptap/extension-code-block": "^2.0.2",
 		"@tiptap/extension-document": "^2.0.2",
+		"@tiptap/extension-hard-break": "^2.0.2",
+		"@tiptap/extension-heading": "^2.0.2",
+		"@tiptap/extension-highlight": "^2.0.2",
+		"@tiptap/extension-history": "^2.0.2",
 		"@tiptap/extension-italic": "^2.0.2",
+		"@tiptap/extension-list-item": "^2.0.2",
+		"@tiptap/extension-ordered-list": "^2.0.2",
 		"@tiptap/extension-paragraph": "^2.0.2",
 		"@tiptap/extension-strike": "^2.0.2",
 		"@tiptap/extension-text": "^2.0.2",
@@ -34,6 +43,7 @@
 		"typescript": "5.0.3"
 	},
 	"devDependencies": {
+		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.14",
 		"postcss": "^8.4.21",
 		"prettier": "^2.8.7",
