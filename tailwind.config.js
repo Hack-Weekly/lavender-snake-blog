@@ -56,10 +56,9 @@ module.exports = {
 				},
 				"grey-20": "#333333",
 				"grey-redtint": "#F7F2F2",
-				"title": "#24248E",
+				title: "#24248E",
 				"primary-bg": "#F4F4EC",
 				"card-bg": "#FAFAFA",
-
 			},
 			minWidth: {
 				"1/2": "50%",
@@ -75,9 +74,9 @@ module.exports = {
 				serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
 			},
 			screens: {
-				"xs": "480px",
-			}
+				xs: "480px",
+			},
 		},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/typography")],
 }
