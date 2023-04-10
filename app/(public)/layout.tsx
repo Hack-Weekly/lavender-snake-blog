@@ -9,7 +9,7 @@ export default function PublicLayout({
 	return (
 		<div className="min-h-dscreen flex flex-col items-center justify-between">
 			<Nav />
-			<main className="align-center flex w-full flex-1 flex-col justify-center bg-primary-bg">
+			<main className="align-center flex w-full flex-1 flex-col justify-center bg-primary-bg dark:bg-[#0F172A]">
 				{children}
 			</main>
 			<Footer />

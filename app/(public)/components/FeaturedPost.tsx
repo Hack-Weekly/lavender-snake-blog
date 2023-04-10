@@ -65,9 +65,9 @@ export default function FeaturedPost() {
     const datetime = new Date(mockData.datetime).toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric' });
 
 	return (
-		<div className={`flex flex-col sm:flex-row items-center w-[70%] sm:w-[85%] md:w-[85%] lg:w-[75%] xl:w-[70%] mt-10 p-6 lg:p-10 bg-grey-redtint dark:bg-primary-800 rounded-lg ${inter.variable} font-inter cursor-pointer`} >
+		<div className={`flex flex-col sm:flex-row items-center w-[90%] sm:w-[85%] md:w-[85%] lg:w-[75%] xl:w-[70%] mt-10 p-6 lg:p-10 bg-secondary-bg hover:drop-shadow-2xl dark:bg-[#1F2937] dark:hover:bg-[#293548] rounded-lg ${inter.variable} font-inter cursor-pointer`} >
             <Image
-                className="h-48 sm:h-60 sm:w-5/12 mb-4 sm:mb-0 rounded-md"
+                className="h-48 sm:h-60 w-auto sm:w-5/12 mb-4 sm:mb-0 rounded-md"
                 src={mockData.imgsrc}
                 alt="Featured Image"
                 width={384}
@@ -78,17 +78,17 @@ export default function FeaturedPost() {
                 <div className="text-sm text-primary-600 dark:text-primary-100">
                     {tags}
                 </div>
-                <div className="text-2xl sm:text-3xl font-bold text-title my-2 line-clamp-2">
+                <div className="text-2xl sm:text-3xl font-bold text-title dark:text-title-dark my-2 line-clamp-2">
                     {mockData.title}
                 </div>
-                <div className="text-justify text-sm sm:text-base my-1 sm:my-2 line-clamp-4">
+                <div className="text-justify text-sm sm:text-base my-1 sm:my-2 dark:text-[#bdbddd] line-clamp-3">
                     {mockData.body}
                 </div>
-                <div className="flex justify-between mt-2 text-xs sm:text-sm font-semibold">
-                    <div className="flex items-center gap-2">
+                <div className="flex justify-between mt-3 text-xs sm:text-sm font-semibold">
+                    <div className="flex items-center gap-2 p-1 bg-primary-100 rounded-md dark:text-primary-800">
                         READ MORE <BsFillArrowRightCircleFill />
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 text-primary-600 dark:text-primary-100">
                         <BiTimeFive /> <span>{datetime}</span>
                     </div>
                 </div>
