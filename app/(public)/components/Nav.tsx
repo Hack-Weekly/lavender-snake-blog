@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Nav() {
 	return (
-		<nav className="flex w-full flex-row items-center justify-between px-2 py-0 lg:px-8 bg-primary-bg dark:bg-[#232136] text-primary dark:text-primary-100">
+		<nav className="flex w-full flex-row items-center justify-between px-2 py-0 lg:px-8 bg-primary-bg dark:bg-[#0B0A1F] text-primary dark:text-primary-100">
 			<Link href="/" className="flex flex-row gap-1 items-center">
 				<Image
 					className="aspect-square"
