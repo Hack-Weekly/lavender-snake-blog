@@ -56,9 +56,16 @@ module.exports = {
 				},
 				"grey-20": "#333333",
 				"grey-redtint": "#F7F2F2",
-				title: "#24248E",
+				"title": "#24248E",
+				"title-dark": "#e9e9f3",
+				"secondary-title": "",
 				"primary-bg": "#F4F4EC",
+				"secondary-bg": "#ececf4",
 				"card-bg": "#FAFAFA",
+				"primary-dark-bg": "#232136",
+				"primary-dark-bg-darker": "#251a58",
+				"secondary-dark-bg": "#160020",
+
 			},
 			minWidth: {
 				"1/2": "50%",
