@@ -4,7 +4,7 @@ title: "The Importance of Self-Care"
 date: "19 April 2023"
 excerpt: "Self-care is a buzzword that's been thrown around a lot lately, but what exactly does it mean? Self-care refers to any activity or practice that promotes physical, mental, and emotional well-being. It's essential for maintaining a healthy balance in our lives."
 imageSrc: "/images/self-care.jpg"
-author: "Tox"
+author: "Jude"
 tags: ["health", "science"]
 ---
 

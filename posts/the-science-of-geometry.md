@@ -4,7 +4,7 @@ title: "The Science of Geometry"
 date: "10 April 2023"
 excerpt: "Geometry is a branch of mathematics that deals with the study of shapes, sizes, positions, and dimensions of objects in space. It is a fundamental field of study that has been in existence for thousands of years, dating back to ancient civilizations such as the Greeks, Egyptians, and Babylonians."
 imageSrc: "/images/ArticleImage.png"
-author: "Jude"
+author: "Tox"
 tags: ["mathematics", "science"]
 ---
 
