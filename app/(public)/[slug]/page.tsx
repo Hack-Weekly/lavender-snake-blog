@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 	return posts.map((post) => ({
 		slug: post.slug,
 	}))
-}
+};
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
@@ -31,8 +31,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 				<div className="flex gap-1 text-center text-sm font-light text-neutral-400">
 					{post.data.tags.map(
 						(tag: string, index: number, elements: string[]) => {
-							const isNext = elements[index + 1]
-
+							const isNext = elements[index + 1];
 							return (
 								<div key={tag}>
 									<Tag tag={tag} />
