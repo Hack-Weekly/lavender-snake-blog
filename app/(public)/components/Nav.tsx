@@ -12,6 +12,7 @@ export default function Nav() {
 					alt="Team Lavender Snake Logo"
 					width={64}
 					height={64}
+					priority
 				/>
 				<div className="text-lg xs:text-xl font-bold">Snakebyte</div>
 			</Link>
