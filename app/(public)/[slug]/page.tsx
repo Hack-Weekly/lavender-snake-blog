@@ -65,7 +65,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					</p>
 				</div>
 
-				<Markdown className="prose">{post.content}</Markdown>
+				<Markdown className="prose dark:prose-invert">{post.content}</Markdown>
 			</article>
 			<div className="w-full px-4 py-4 lg:px-20 lg:py-12">
 				<p className="mb-4 text-2xl font-light text-neutral-700">COMMENTS</p>
