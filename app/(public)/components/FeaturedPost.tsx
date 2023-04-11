@@ -4,6 +4,9 @@ import Link from "next/link"
 import { BsFillArrowRightCircleFill } from "react-icons/bs"
 import { BiTimeFive } from "react-icons/bi"
 
+import path from "path"
+import fs from "fs"
+
 interface Post {
     id: string
 	title: string
@@ -95,4 +98,12 @@ export default function FeaturedPost() {
             </div>
         </div>
 	)
+}
+
+export async function getStaticProps() {
+	const files = fs.readdirSync(path.join('posts'));
+
+	console.log(files);
+	
+
 }
