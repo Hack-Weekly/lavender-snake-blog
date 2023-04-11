@@ -4,6 +4,14 @@ import getPostMetadata from "../../components/getPostMetadata";
 import getAllUniqueTags from "../../components/getAllUniqueTags";
 import { BsHourglassSplit } from "react-icons/bs";
 
+
+export async function generateStaticParams() {
+	const tags = getAllUniqueTags();
+    return tags.map((tag) => ({
+		category: tag
+	}));
+}
+
 export default function Category({ params }: { params: { category: string } }){
     const postMetadata = getPostMetadata();
     const category = params.category;
@@ -15,8 +23,6 @@ export default function Category({ params }: { params: { category: string } }){
     }
 
     const allTags = getAllUniqueTags();
-    
-    console.log(allTags.includes(category));
     
     
     return (
