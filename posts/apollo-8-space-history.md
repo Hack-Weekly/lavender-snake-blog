@@ -4,7 +4,7 @@ title: "*Apollo 8*: Flying into Space History during a Moment of Public Enthusia
 date: "11 April 2023"
 excerpt: "It was a time of high excitement. But the U.S. public's support of manned space exploration was already ebbing"
 imageSrc: ""
-author: "Ajoy"
+author: "Vitiligo"
 tags: ["space", "science"]
 ---
 
