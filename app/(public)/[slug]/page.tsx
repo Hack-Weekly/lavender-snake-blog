@@ -7,10 +7,11 @@ import matter from "gray-matter"
 import getPostMetadata from "../components/getPostMetadata"
 import Tag from "../components/Tag"
 import { BsHourglassSplit } from "react-icons/bs"
+import { join } from "path"
 
 const getPostContent = (slug: string) => {
 	const folder = "posts/"
-	const file = `${folder}${slug}.md`
+	const file = join(process.cwd(), `${folder}${slug}.md`)
 	if (fs.existsSync(file)) {
 		const content = fs.readFileSync(file, "utf8")
 		const matterResult = matter(content)
@@ -31,7 +32,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
 	return post ? (
 		<section className="flex w-full flex-col items-center">
-			<article className="mt-6 flex max-w-xl flex-col items-center space-y-12 text-black dark:text-[#c7cfd9] lg:w-[58%]">
+			<article className="my-6 flex max-w-xl flex-col items-center space-y-12 text-black dark:text-[#c7cfd9] lg:w-[58%]">
 				<div className="flex gap-1 text-center text-sm font-light text-neutral-400">
 					{post.data.tags.map(
 						(tag: string, index: number, elements: string[]) => {
