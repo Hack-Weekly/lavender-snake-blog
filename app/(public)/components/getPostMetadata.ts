@@ -2,6 +2,7 @@ import fs from "fs"
 import matter from "gray-matter"
 import { PostMetadata } from "./PostMetadata"
 import { join } from "path"
+import { parse } from "date-fns"
 
 const getPostMetadata = (): PostMetadata[] => {
 	const folder = "posts/"
@@ -26,6 +27,12 @@ const getPostMetadata = (): PostMetadata[] => {
 	})
 
 	return posts
+		.sort(
+			(a, b) =>
+				parse(a.date, "d MMMM yyyy", new Date()).valueOf() -
+				parse(b.date, "d MMMM yyyy", new Date()).valueOf()
+		)
+		.reverse()
 }
 
 export default getPostMetadata
