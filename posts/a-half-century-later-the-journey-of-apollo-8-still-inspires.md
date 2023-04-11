@@ -20,7 +20,7 @@ In August 1968 NASA's Apollo Spacecraft Program Office manager, George Low, prop
 
 Orbiting made the stakes even higher: If a failure of the spacecraft's rocket engine left astronauts Frank Borman, Jim Lovell and Bill Anders stranded, NASA Administrator Jim Webb feared we would have “ruined the moon” for poets, lovers and everyone who would look at the orb and know there were three dead astronauts circling there. And, if the new navigational, communication or reentry components had failed, the crew could have been lost in space or have burned up in Earth's atmosphere on returning home.
 
-[!images/apollo-8-astronauts.webp](https://static.scientificamerican.com/blogs/assets/Image/S69-15737~orig.jpg)
+![images/apollo-8-astronauts.webp](https://static.scientificamerican.com/blogs/assets/Image/S69-15737~orig.jpg)
 
 That year, public enthusiasm for human spaceflight was as high as it ever would be but a failure might have dampened enthusiasm, thereby slowing or even stopping the U.S. from fulfilling its attempt to fulfill Kennedy's goal.
 
@@ -30,4 +30,4 @@ But what stands out for many is that it was also the first time most people back
 
 What started as a gamble became one of humanity's greatest moments in exploration—and a public relations coup for NASA. Not only that, but people needed a moment like this in a year like 1968—one shattered by antiwar and race protests and riots; the assassinations of Martin Luther King, Jr., and Robert F. Kennedy; as well as war, both hot and cold.
 
-[!images/apollo-8-earthrise.webp](https://static.scientificamerican.com/blogs/assets/Image/apollo08_earthrise.jpg)
+![images/apollo-8-earthrise.webp](https://static.scientificamerican.com/blogs/assets/Image/apollo08_earthrise.jpg)
