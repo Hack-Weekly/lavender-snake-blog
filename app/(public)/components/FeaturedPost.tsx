@@ -16,9 +16,8 @@ const getFeaturedPostContent = (slug: string = "the-science-of-geometry") => {
 	const folder = "posts/"
 	const file = `${folder}${slug}.md`
 	const content = fs.readFileSync(file, "utf8")
-	const date = fs.statSync(file).mtime
 	const matterResult = matter(content)
-	return { content: matterResult, date: date }
+	return matterResult
 }
 
 export default function FeaturedPost() {
@@ -31,7 +30,7 @@ export default function FeaturedPost() {
 		>
 			<Image
 				className="mb-4 h-48 w-auto rounded-md sm:mb-0 sm:h-60 sm:w-5/12"
-				src={featuredPostData.content.data.imageSrc}
+				src={featuredPostData.data.imageSrc}
 				alt="Featured Image"
 				width={384}
 				height={240}
@@ -39,27 +38,20 @@ export default function FeaturedPost() {
 			/>
 			<div className="ml-8 mr-8 flex w-full flex-col justify-center sm:mr-4 lg:ml-14">
 				<div className="text-sm text-primary-600 dark:text-primary-100">
-					{featuredPostData.content.data.tags.join(", ").toUpperCase()}
+					{featuredPostData.data.tags.join(", ").toUpperCase()}
 				</div>
 				<div className="my-2 line-clamp-2 text-2xl font-bold text-title dark:text-title-dark sm:text-3xl">
-					{featuredPostData.content.data.title}
+					{featuredPostData.data.title}
 				</div>
 				<div className="my-1 line-clamp-3 text-justify text-sm dark:text-[#bdbddd] sm:my-2 sm:text-base">
-					{featuredPostData.content.data.excerpt}
+					{featuredPostData.data.excerpt}
 				</div>
 				<div className="mt-3 flex justify-between text-xs font-semibold sm:text-sm">
-					<div className="flex items-center gap-2 rounded-md bg-primary-100 p-1 dark:text-primary-800">
+					<div className="flex items-center gap-2 rounded-md bg-primary-100 px-4 py-1 dark:text-primary-800">
 						READ MORE <BsFillArrowRightCircleFill />
 					</div>
 					<div className="flex items-center gap-1 text-primary-600 dark:text-primary-100">
-						<BiTimeFive />{" "}
-						<span>
-							{featuredPostData.date.toLocaleDateString("en-GB", {
-								year: "numeric",
-								month: "long",
-								day: "numeric",
-							})}
-						</span>
+						<BiTimeFive /> <span>{featuredPostData.data.date}</span>
 					</div>
 				</div>
 			</div>

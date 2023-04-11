@@ -46,14 +46,7 @@ export default function PostCard(postCardProps: postCardProps) {
 						READ MORE <BsFillArrowRightCircleFill />
 					</div>
 					<div className="flex items-center gap-1 font-semibold text-primary-600 dark:text-primary-100">
-						<BiTimeFive />{" "}
-						<span>
-							{postCardProps.cardData.date.toLocaleDateString("en-GB", {
-								year: "numeric",
-								month: "long",
-								day: "numeric",
-							})}
-						</span>
+						<BiTimeFive /> <span>{postCardProps.cardData.date}</span>
 					</div>
 				</div>
 			</div>

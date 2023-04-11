@@ -2,6 +2,7 @@ import fs from "fs"
 import matter from "gray-matter"
 import { PostMetadata } from "./PostMetadata"
 import { join } from "path"
+import { parse } from "date-fns"
 
 const getPostMetadata = (): PostMetadata[] => {
 	const folder = "posts/"
@@ -12,12 +13,11 @@ const getPostMetadata = (): PostMetadata[] => {
 			join(process.cwd(), `posts/${fileName}`),
 			"utf8"
 		)
-		const fileStats = fs.statSync(join(process.cwd(), `posts/${fileName}`))
 		const matterResult = matter(fileContents)
 		return {
 			id: matterResult.data.id,
 			title: matterResult.data.title,
-			date: fileStats.mtime,
+			date: matterResult.data.date,
 			excerpt: matterResult.data.excerpt,
 			imageSrc: matterResult.data.imageSrc,
 			author: matterResult.data.author,
@@ -26,7 +26,13 @@ const getPostMetadata = (): PostMetadata[] => {
 		}
 	})
 
-	return posts.sort((a, b) => a.date.valueOf() - b.date.valueOf()).reverse()
+	return posts
+		.sort(
+			(a, b) =>
+				parse(a.date, "d MMMM yyyy", new Date()).valueOf() -
+				parse(b.date, "d MMMM yyyy", new Date()).valueOf()
+		)
+		.reverse()
 }
 
 export default getPostMetadata
