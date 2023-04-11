@@ -1,4 +1,4 @@
-import PostsByTags from "../../components/PostsByTags";
+import FilteredPosts from "../../components/FilteredPosts";
 import PostCard from "../../components/PostCard";
 import getPostMetadata from "../../components/getPostMetadata";
 import getAllUniqueTags from "../../components/getAllUniqueTags";
@@ -15,8 +15,6 @@ export async function generateStaticParams() {
 export default function Category({ params }: { params: { category: string } }){
     const postMetadata = getPostMetadata();
     const category = params.category;
-
-    console.log(category);
     
     function capitalizeFirstLetter(str: string) {
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -28,11 +26,11 @@ export default function Category({ params }: { params: { category: string } }){
     return (
         <div>
             <h1 className="my-5 text-center text-3xl font-bold dark:text-white">
-                {capitalizeFirstLetter(category)} Blogs
+                {capitalizeFirstLetter(category)} blogs
             </h1>
             {allTags.includes(category) ? 
                 <div className="flex flex-col items-center">
-                    <PostsByTags > 
+                    <FilteredPosts > 
                         {postMetadata.map((post, index) => {
                             if(post.tags.includes(category)){
                                 return(
@@ -40,10 +38,10 @@ export default function Category({ params }: { params: { category: string } }){
                                 )
                             }
                         })}
-                    </PostsByTags>
+                    </FilteredPosts>
                 </div>
             :
-                <div className="flex items-center justify-center gap-2 mt-20">
+                <div className="flex flex-col xs:flex-row items-center justify-center gap-2 mt-20 mx-5 text-lg">
                     <BsHourglassSplit />
                     No blogs on this category, yet
                 </div>

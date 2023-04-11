@@ -53,7 +53,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 				<div className="gap-2. flex flex-row-reverse self-end">
 					<p className="flex-none text-right text-sm">
 						Written by{" "}
-						<Link href="/blog?author=Jude" className="font-bold text-primary">
+						<Link href={`/author/${post.data.author}`} className="font-bold text-primary">
 							{post.data.author}
 						</Link>{" "}
 						on {post.data.date}

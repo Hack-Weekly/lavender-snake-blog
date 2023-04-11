@@ -4,7 +4,7 @@ title: "The Benefits of Reading"
 date: "10 April 2023"
 excerpt: "Reading is an activity that has been enjoyed by people for centuries. It's not only a great way to pass the time, but it also has many benefits for our mental and emotional health. In this blog post, we'll explore some of the benefits of reading."
 imageSrc: "/images/reading.jpg"
-author: "MagicBean"
+author: "MagicBeam"
 tags: ["study", "books"]
 ---
 
