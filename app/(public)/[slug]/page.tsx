@@ -1,12 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import fs from "fs"
-import Markdown from "markdown-to-jsx"
+import Markdown, { compiler } from "markdown-to-jsx"
 import matter from "gray-matter"
 import getPostMetadata from "../components/getPostMetadata"
 import Tag from "../components/Tag"
 import { BsHourglassSplit } from "react-icons/bs"
 import { join } from "path"
+import removeMd from "remove-markdown"
 
 const getPostContent = (slug: string) => {
 	const folder = "posts/"
@@ -29,6 +30,10 @@ export async function generateStaticParams() {
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
+	const plainText = removeMd(post ? post.content : "")
+	const wpm = 265 // medium's wpm
+	const words = plainText.trim().split(/\s+/).length
+	const readingTime = Math.ceil(words / wpm)
 	return post ? (
 		<section className="flex w-full flex-col items-center p-4">
 			<article className="my-6 flex max-w-xl flex-col items-center space-y-12 text-black dark:text-[#c7cfd9] lg:w-[58%] ">
@@ -55,7 +60,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					width={600}
 					height={600}
 				/>
-				<div className="flex flex-row-reverse gap-2 self-end">
+				<div className="flex w-full flex-row items-center justify-between gap-2">
+					<p className="text-left text-sm font-light text-neutral-400">
+						{readingTime} {readingTime != 1 ? "minutes" : "minute"} read...
+					</p>
 					<p className="flex-none text-right text-sm">
 						Written by{" "}
 						<Link
