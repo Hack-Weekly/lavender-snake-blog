@@ -14,7 +14,7 @@ const getPostContent = (slug: string) => {
 	const file = join(process.cwd(), `${folder}${slug}.md`)
 	if (fs.existsSync(file)) {
 		const content = fs.readFileSync(file, "utf8")
-		const date = fs.statSync(file).birthtime
+		const date = fs.statSync(file).mtime
 		const matterResult = matter(content)
 		return { content: matterResult, date: date }
 	} else {

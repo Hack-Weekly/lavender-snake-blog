@@ -16,7 +16,7 @@ const getFeaturedPostContent = (slug: string = "the-science-of-geometry") => {
 	const folder = "posts/"
 	const file = `${folder}${slug}.md`
 	const content = fs.readFileSync(file, "utf8")
-	const date = fs.statSync(file).birthtime
+	const date = fs.statSync(file).mtime
 	const matterResult = matter(content)
 	return { content: matterResult, date: date }
 }
