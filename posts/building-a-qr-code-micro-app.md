@@ -3,7 +3,7 @@ id: "2"
 title: "Building a QR code micro-app"
 date: "18 April 2023"
 excerpt: "Ever since the pandemic started, I've noticed QR codes creeping into my daily life. Venue check-ins, digital menus at restaurants, and online payments."
-imageSrc: "/images/ArticleImage.png"
+imageSrc: "/images/thinkstock-qr-code.webp"
 author: "Ajoy"
 tags: ["mathematics", "science"]
 ---

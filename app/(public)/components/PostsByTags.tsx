@@ -1,14 +1,5 @@
 import React from "react"
 
-interface Post {
-	id: string
-	title: string
-	body: string
-	tags: string[]
-	author: string
-	imgsrc: string
-	datetime: number
-}
 interface Posts {
 	children: React.ReactNode
 }

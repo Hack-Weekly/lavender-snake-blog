@@ -102,8 +102,4 @@ export default function FeaturedPost() {
 
 export async function getStaticProps() {
 	const files = fs.readdirSync(path.join('posts'));
-
-	console.log(files);
-	
-
 }
