@@ -1,11 +1,11 @@
 ---
 id: "7"
-title: "*Apollo 8*: Flying into Space History during a Moment of Public Enthusiasm"
+title: "_Apollo 8_: Flying into Space History during a Moment of Public Enthusiasm"
 date: "11 April 2023"
 excerpt: "It was a time of high excitement. But the U.S. public's support of manned space exploration was already ebbing"
 imageSrc: ""
 author: "Vitiligo"
-tags: ["space", "science"]
+tags: ["space", "science", "technology"]
 ---
 
 Apollo 8 flew barely a decade into the Space Age. It was a moment when public enthusiasm for human space exploration ran high—but also was poised to decline. And it was a time when space technology was starting to transform everyday life.
