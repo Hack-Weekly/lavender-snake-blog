@@ -12,11 +12,12 @@ const getPostMetadata = (): PostMetadata[] => {
 			join(process.cwd(), `posts/${fileName}`),
 			"utf8"
 		)
+		const fileStats = fs.statSync(join(process.cwd(), `posts/${fileName}`))
 		const matterResult = matter(fileContents)
 		return {
 			id: matterResult.data.id,
 			title: matterResult.data.title,
-			date: matterResult.data.date,
+			date: fileStats.birthtime,
 			excerpt: matterResult.data.excerpt,
 			imageSrc: matterResult.data.imageSrc,
 			author: matterResult.data.author,
@@ -25,7 +26,7 @@ const getPostMetadata = (): PostMetadata[] => {
 		}
 	})
 
-	return posts
+	return posts.sort((a, b) => a.date.valueOf() - b.date.valueOf()).reverse()
 }
 
 export default getPostMetadata

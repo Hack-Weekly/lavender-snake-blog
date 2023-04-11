@@ -14,8 +14,9 @@ const getPostContent = (slug: string) => {
 	const file = join(process.cwd(), `${folder}${slug}.md`)
 	if (fs.existsSync(file)) {
 		const content = fs.readFileSync(file, "utf8")
+		const date = fs.statSync(file).birthtime
 		const matterResult = matter(content)
-		return matterResult
+		return { content: matterResult, date: date }
 	} else {
 		return null
 	}
@@ -30,7 +31,7 @@ export async function generateStaticParams() {
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
-	const plainText = removeMd(post ? post.content : "")
+	const plainText = removeMd(post ? post.content.content : "")
 	const wpm = 265 // medium's wpm
 	const words = plainText.trim().split(/\s+/).length
 	const readingTime = Math.ceil(words / wpm)
@@ -38,7 +39,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 		<section className="flex w-full flex-col items-center p-4">
 			<article className="my-6 flex max-w-xl flex-col items-center space-y-12 text-black dark:text-[#c7cfd9] lg:w-[58%] ">
 				<div className="flex gap-1 text-center text-sm font-light text-neutral-400">
-					{post.data.tags.map(
+					{post.content.data.tags.map(
 						(tag: string, index: number, elements: string[]) => {
 							const isNext = elements[index + 1]
 							return (
@@ -51,11 +52,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					)}
 				</div>
 				<h1 className="text-center text-3xl font-bold dark:text-white">
-					{post.data.title}
+					{post.content.data.title}
 				</h1>
 				<Image
 					className="aspect-video rounded-md"
-					src={post.data.imageSrc}
+					src={post.content.data.imageSrc}
 					alt="Featured Image"
 					width={600}
 					height={600}
@@ -67,17 +68,22 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					<p className="flex-none text-right text-sm">
 						Written by{" "}
 						<Link
-							href={`/author/${post.data.author}`}
+							href={`/author/${post.content.data.author}`}
 							className="font-bold text-primary"
 						>
-							{post.data.author}
+							{post.content.data.author}
 						</Link>{" "}
-						on {post.data.date}
+						on{" "}
+						{post.date.toLocaleDateString("en-GB", {
+							year: "numeric",
+							month: "long",
+							day: "numeric",
+						})}
 					</p>
 				</div>
 
 				<Markdown className="prose max-w-none dark:prose-invert">
-					{post.content}
+					{post.content.content}
 				</Markdown>
 			</article>
 		</section>

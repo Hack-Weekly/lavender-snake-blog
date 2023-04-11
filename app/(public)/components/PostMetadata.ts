@@ -1,10 +1,10 @@
-export interface PostMetadata{
-    id: string;
-    title: string;
-    date: string
-    excerpt: string
-    imageSrc: string
-    author: string
-    tags: string[]
-    slug: string
+export interface PostMetadata {
+	id: string
+	title: string
+	date: Date
+	excerpt: string
+	imageSrc: string
+	author: string
+	tags: string[]
+	slug: string
 }
