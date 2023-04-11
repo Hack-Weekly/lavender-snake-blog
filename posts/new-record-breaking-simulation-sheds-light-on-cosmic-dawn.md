@@ -1,0 +1,59 @@
+---
+id: "2"
+title: "New Record-Breaking Simulation Sheds Light on ‘Cosmic Dawn’"
+date: "18 April 2023"
+excerpt: "THESAN—the largest, most detailed computer model of the universe’s first billion years yet made—is helping set expectations for observations from NASA’s James Webb Space Telescope"
+imageSrc: "/images/simulation-of-cosmic-dawn"
+author: "Ajoy"
+tags: ["technology", "science", "space", "cosmology"]
+---
+
+Much remains a mystery about the first billion years of the universe’s history, the epoch in which the cosmos emerged from its dark ages with the dawning of the earliest stars and galaxies. Now scientists have developed the largest, most detailed computer model of this period to date to help shed light on how the infant universe evolved. Named THESAN, after the Etruscan goddess of the dawn, this new project’s predictions about the primordial past will soon be tested by data from NASA’s recently launched James Webb Space Telescope (JWST) and other next-generation observatories.
+
+In the immediate aftermath of the big bang, about 13.8 billion years ago, the universe was filled with a cosmic fog. The heat of creation was so great that electrons could not combine with protons and neutrons to form atoms, and space was instead suffused with a dense soup of plasma—electrically charged (or ionized) particles that scattered rather than transmitted light. This cosmic fog briefly lifted some 380,000 years later, during the so-called era of recombination, when the universe sufficiently cooled to allow atoms to freeze out from the plasma as clouds of optically transparent, electrically neutral hydrogen gas. Suddenly freed, light from the big bang’s afterglow flashed throughout the universe, which then faded back to darkness because stars had yet to form.
+
+Darkness reigned for the next few hundred million years until gravity began pulling matter together into stars and galaxies. Even then, the darkness only dissipated gradually, as intense ultraviolet radiation from the universe’s first luminous objects reionized the surrounding neutral hydrogen, eventually burning away the gaseous gloom. This “epoch of reionization” lasted more than a half-billion years, but scientists know precious little about its details. What they do know with certainty is that its end marked the cosmic moment when light from across the electromagnetic spectrum—rather than the mere fraction that could pierce the veil of neutral hydrogen—started traveling freely through space. Simply put, this was when the universe at last became clear for study by curious astronomers seeking to learn how exactly the cosmic dawn occurred.
+
+That is not to say that such studies are easy. To see light from such ancient times, researchers must use the largest, most sensitive telescopes available to look for objects that are as far away as possible. This is because the greater an object’s distance, the more time its light took to reach Earth—and the more attenuated that light will be.
+
+## A Computational Cosmic Dawn
+
+Another way to gain insights on this bygone era is to simulate it on computers. The early stages of reionization are relatively simple to re-create because the universe was relatively dark and uniform then, explains Aaron Smith, an astrophysicist at the Massachusetts Institute of Technology. As primordial matter sorts itself into galaxies and stars, however, complex interactions between gravity, light, gas and dust become increasingly difficult to model. Smith is one of the three co-leads of the THESAN project, alongside Rahul Kannan of the Harvard-Smithsonian Center for Astrophysics and Enrico Garaldi of the Max Planck Institute for Astrophysics in Garching, Germany. 
+
+“Since modeling light is quite complicated and computationally expensive, there are only a few cosmological simulations that focus on exploring this epoch,” Kannan says. “Each of these cosmological simulations have their own advantages and disadvantages.”
+
+[THESAN](https://arxiv.org/abs/2110.02966) is designed to simulate the early universe to an unprecedented extent. Some cosmological simulations, such as the [Cosmic Dawn (CoDa)](https://arxiv.org/abs/1511.00011) simulations and the [Cosmic Reionization on Computers (CROC)](https://bluewaters.ncsa.illinois.edu/liferay-content/document-library/BW-Annual-Report-2018/bwar18_gnedin.pdf) project, have modeled large volumes at relatively low resolutions, while others, such as the [Renaissance](https://rensimlab.github.io/showcase.html) and [SPHINX](https://sphinx.univ-lyon1.fr/) simulations, are more detailed but do not span great distances. In contrast, THESAN “combines high resolution with large simulated volumes,” Kannan says.
+
+“Usually there’s a trade-off between studying in detail galaxy formation and cosmic reionization, but THESAN manages to do both,” says astrophysicist John Wise of the Georgia Institute of Technology, who did not work on THESAN.
+
+THESAN’s developers built it on the back of an older series of simulations called Illustris-TNG, which have been shown to accurately model many of the properties and populations of evolving galaxies. They next developed a new algorithm to model how the light from stars and galaxies interacted with and reionized their surrounding gas over the first billion years of the universe—details that previous simulations have not successfully incorporated at large scales. Finally, the THESAN team included a model of how cosmic dust in the early universe may have influenced the formation of galaxies.
+
+“They’ve combined two state-of-the-art models and added a bit more—it looks really interesting,” says Risa Wechsler, a cosmologist at Stanford University and director of the Kavli Institute for Particle Astrophysics and Cosmology, who did not take part on THESAN.
+
+## Scaling Up
+
+THESAN can track the birth and evolution of hundreds of thousands of galaxies within a cubic volume spanning more than 300 million light-years across. Starting from circa 400,000 years after the big bang—before the first stars are thought to have emerged—the simulation extrapolates out through the first billion years of cosmic history. To do all that, THESAN runs on one of the largest supercomputers in the world, [SuperMUC-NG](https://www.top500.org/system/179566/), which has used nearly 60,000 computer processing cores to perform the simulation’s calculations over an equivalent of 30 million CPU hours. (For perspective, that same computational feat would require 3,500 years of dedicated number crunching on a typical desktop computer.)
+
+“One of the most exciting things about the THESAN simulations to me is the increased resolution,” says astrophysicist Brian Welch of Johns Hopkins University, who did not work on THESAN. “They seem to be able to connect the small-scale structures within galaxies that create ionizing photons to the larger-scale intergalactic medium where those photons are driving the epoch of reionization. The simulations can then help determine how ionizing photons are escaping from galaxies and thus how those galaxies are driving reionization.”
+
+Using the Hubble Space Telescope, Welch and his colleagues recently discovered the most distant single star detected yet, dubbed Earendel, which dates back to when the universe was just 900 million years old. Although THESAN cannot simulate individual stars such as Earendel “since that would require an inordinate amount of computational power,” it can still shed light on the conditions in the galaxies in which Earendel and its compatriots were forming, he says.
+
+The researchers say THESAN is already yielding predictions about the early universe. For example, it suggests the distance that light traveled increased near the end of reionization more dramatically than previously thought—by a factor of 10 over a few hundred million years—likely because dense pockets of gas that took longer to ionize were missed by previous lower-resolution simulations.
+
+One drawback of THESAN, however, is that it uses a relatively simplistic model for the cold dense gas in galaxies, Kannan says. The THESAN team is currently working on a follow-on project dubbed THESAN-ZOOMS to replace this model “with a much more sophisticated one that takes into account many additional physical processes that impact the properties of this dense gas,” he notes.
+
+Another shortcoming of THESAN is that the volume it simulates is arguably too small to properly pinpoint key details on how the early universe evolved, such as the size and number of pockets of ionized transparent gas, Kannan says. The scientists are currently planning to scale up the simulation to a volume 64 times larger via a diverse set of optimization tweaks meant to improve its overall performance, he says.
+
+## Expectations versus Reality
+
+Whether any of these deficiencies actually make a meaningful difference for THESAN’s predictions could soon be revealed by fresh observations from JWST, which is designed to see the first stars and galaxies. Will the stars and galaxies coalescing in THESAN’s virtual cosmos mirror the populations of ancient objects as seen by JWST’s optics? Researchers are eager to find out. Models of the faint galaxies in the early universe are very sensitive to uncertainties in phenomena such as star formation, “which remain highly debated,” says Aaron Yung, a theoretical astrophysicist at NASA’s Goddard Space Flight Center, who did not work on THESAN. Simulations that may successfully model known galaxies “can deliver diverging predictions in the faint populations. [JWST] will detect these galaxies for the first time and provide constraints on the physics that drives the formation of these galaxies.”
+
+By the end of this year, JWST will be able to collect enough data to test THESAN when it comes to many predictions of galaxy properties, Smith says. “We are already working with astronomers involved with JWST to interpret the data that will be available this year.”
+
+“My intuition tells me that JWST will match the statistics of the bright galaxies modeled in CoDa, CROC and THESAN,” says Wise, who helped develop the Renaissance simulations. “However, they don’t have sufficient resolution to model low-mass and small galaxies, where Renaissance and SPHINX will match better.” Astrophysicists, he reasons, will most likely use a combination of both types of simulations to interpret JWST observations of ancient galaxies.
+
+No one expects THESAN or any other simulation of the epoch of reionization to get everything completely right. “Most, if not all, simulations done in this epoch are missing some physics—even though THESAN is quite high-resolution, it’s still low-resolution, compared to the physical processes actually happening,” Wechsler says. “Progress happens when data from observatories and insights from simulations work in concert. That interplay is what is exciting.”
+
+Ultimately “we will need more than JWST to confirm the complete picture of cosmic evolution in the early universe,” Garaldi says. “A variety of instruments covering a wide range of wavelengths are necessary to understand the various aspects of this epoch.” These include the Hydrogen Epoch of Reionization Array (HERA), the Square Kilometer Array (SKA), the Fred Young Submillimeter Telescope (FYST), the Spectro-Photometer for the History of the Universe, Epoch of Reionization and Ices Explorer (SPHEREx), and NASA’s next flagship astrophysical observatory, the Nancy Grace Roman Space Telescope. Ambitious computer models such as THESAN may ultimately help scientists make sense of the flood of data these projects will bring.
+
+“THESAN aims to make predictions for as many of these observations as possible,” Smith notes. “Discrepancies with the data are often just as exciting because that tells us our models are lacking, forcing us to reconsider the underlying physics of these complex processes.”
