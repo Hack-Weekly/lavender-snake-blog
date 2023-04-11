@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-// import CommentEditor from "./components/CommentEditor";
 import fs from "fs"
 import Markdown from "markdown-to-jsx"
 import matter from "gray-matter"
@@ -31,8 +30,8 @@ export async function generateStaticParams() {
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
 	return post ? (
-		<section className="flex w-full flex-col items-center">
-			<article className="my-6 flex max-w-xl flex-col items-center space-y-12 text-black dark:text-[#c7cfd9] lg:w-[58%]">
+		<section className="flex w-full flex-col items-center p-4">
+			<article className="my-6 flex max-w-xl flex-col items-center space-y-12 text-black dark:text-[#c7cfd9] lg:w-[58%] ">
 				<div className="flex gap-1 text-center text-sm font-light text-neutral-400">
 					{post.data.tags.map(
 						(tag: string, index: number, elements: string[]) => {
@@ -69,12 +68,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					</p>
 				</div>
 
-				<Markdown className="prose dark:prose-invert">{post.content}</Markdown>
+				<Markdown className="prose max-w-none dark:prose-invert">
+					{post.content}
+				</Markdown>
 			</article>
-			{/* <div className="w-full px-4 py-4 lg:px-20 lg:py-12">
-				<p className="mb-4 text-2xl font-light text-neutral-700">COMMENTS</p>
-				<CommentEditor />
-			</div> */}
 		</section>
 	) : (
 		<div className="mx-5 mt-20 flex flex-col items-center justify-center gap-2 text-lg xs:flex-row">
