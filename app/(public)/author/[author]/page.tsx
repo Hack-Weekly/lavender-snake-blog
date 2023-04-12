@@ -3,6 +3,18 @@ import PostCard from "../../components/PostCard"
 import getPostMetadata from "../../components/getPostMetadata"
 import getAllAuthors from "../../components/getAllAuthors"
 import { BsHourglassSplit } from "react-icons/bs"
+import { Metadata } from "next"
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { author: string }
+}): Promise<Metadata> {
+	return {
+		title: params.author,
+		description: `Posts written by ${params.author}.`,
+	}
+}
 
 export async function generateStaticParams() {
 	const authors = getAllAuthors()
@@ -14,9 +26,6 @@ export async function generateStaticParams() {
 export default function Author({ params }: { params: { author: string } }) {
 	const postMetadata = getPostMetadata()
 	const author = params.author
-
-	console.log(author)
-
 	const allAuthors = getAllAuthors()
 
 	return (

@@ -3,6 +3,19 @@ import PostCard from "../../components/PostCard"
 import getPostMetadata from "../../components/getPostMetadata"
 import getAllUniqueTags from "../../components/getAllUniqueTags"
 import { BsHourglassSplit } from "react-icons/bs"
+import { Metadata } from "next"
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { category: string }
+}): Promise<Metadata> {
+	const title = params.category.charAt(0).toUpperCase() + params.category.slice(1)
+	return {
+		title: title,
+		description: `Posts under the ${title} category.`
+	}
+}
 
 export async function generateStaticParams() {
 	const tags = getAllUniqueTags()
