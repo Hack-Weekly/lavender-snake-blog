@@ -34,7 +34,7 @@ function SearchModal(searchModalProps: SearchModalProps){
     const searchResult = fuse.search(searchInput);
     
     return (
-        <div id="search-modal" className="fixed z-10 w-full inset-0 bg-primary-950 bg-opacity-40 backdrop-blur-sm flex justify-center items-center">
+        <div id="search-modal" className="fixed z-10 w-full inset-0 bg-primary-950 bg-opacity-40 backdrop-blur-sm flex justify-center items-center text-white dark:text-primary-50">
             <div className="flex flex-col w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[45%] h-96 bg-[#1E293B] rounded">
                 <div className="flex items-center p-3 mb-2 border-b-[1px] border-[#475569]">
                     <BsSearch className="text-2xl mr-1" />
@@ -50,12 +50,12 @@ function SearchModal(searchModalProps: SearchModalProps){
                     {(searchInput && (searchResult.length === 0)) && <div>
                         No results found for &quot;{searchInput}&quot;
                     </div> }
-                    {(searchInput && (searchResult.length > 0)) && <div className="p-3 pt-0">
+                    {(searchInput && (searchResult.length > 0)) && <div className="w-full p-3 pt-0">
                         <div>Search results for &quot;{searchInput}&quot;</div>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-2 w-full">
                             {searchResult.map((matchedPost:any) => {
                                 return(
-                                    <Link onClick={searchModalProps.toggleSearch} href={`/${matchedPost.item.slug}`} key={matchedPost.item.slug} className="p-3 bg-[#2e3c4e] hover:underline dark:hover:bg-[#3e495a] cursor-pointer rounded-sm">
+                                    <Link onClick={searchModalProps.toggleSearch} href={`/${matchedPost.item.slug}`} key={matchedPost.item.slug} className="w-full p-3 bg-[#2e3c4e] hover:underline dark:hover:bg-[#3e495a] cursor-pointer rounded-sm">
                                         {matchedPost.item.title}
                                     </Link>
                                 )

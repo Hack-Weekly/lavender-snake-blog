@@ -23,7 +23,8 @@ export default function Nav() {
 			<div className="flex flex-row items-center gap-1 xs:gap-2 sm:gap-4 md:gap-8 lg:gap-12 relative">
 				<SearchBar postMetadatas={postMetadata} />
 				<Link href="/team" className="flex text-center text-xs xs:text-sm sm:text-base font-bold">
-					<span className="hidden min-[380px]:block">{`MEET THE `}</span> TEAM
+					<span className="min-[380px]:hidden">TEAM </span>
+					<span className="hidden min-[380px]:block">MEET THE TEAM </span>
 				</Link>
 				<ThemeToggler />
 			</div>
