@@ -8,7 +8,7 @@ export default function Nav() {
 	const postMetadata = getPostMetadata()
 
 	return (
-		<nav className="flex w-full  items-center justify-between bg-primary-bg px-2 py-0 text-primary dark:bg-[#0B0A1F] dark:text-primary-100 lg:px-8">
+		<nav className="flex w-full  items-center justify-between bg-primary-bg px-2 py-0 text-primary dark:bg-[#0F172A] dark:text-primary-100 lg:px-8">
 			<Link href="/" className="flex  items-center gap-1">
 				<Image
 					className="aspect-square"
@@ -20,7 +20,7 @@ export default function Nav() {
 				/>
 				<div className="text-lg font-bold xs:text-xl">Snakebyte</div>
 			</Link>
-			<div className="relative flex items-center gap-4 md:gap-8 lg:gap-12">
+			<div className="relative flex items-center gap-4">
 				<SearchBar postMetadatas={postMetadata} />
 				<Link
 					href="/team"
