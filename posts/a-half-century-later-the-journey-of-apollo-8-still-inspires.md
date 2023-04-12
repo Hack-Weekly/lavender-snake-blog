@@ -5,7 +5,7 @@ date: "10 April 2023"
 excerpt: "On Christmas Eve 1968 people worldwide stepped back from the throes of crises and recognized themselves as citizens of a tiny, fragile planet"
 imageSrc: "/images/apollo-8-journey.webp"
 author: "Vitligo"
-tags: ["space", "science"]
+tags: ["space", "science", "technology"]
 ---
 
 On December 21, 1968, Apollo 8 was launched on one of the greatest journeys in the history of human exploration.
@@ -32,6 +32,6 @@ But what stands out for many is that it was also the first time most people back
 What started as a gamble became one of humanity's greatest moments in exploration—and a public relations coup for NASA. Not only that, but people needed a moment like this in a year like 1968—one shattered by antiwar and race protests and riots; the assassinations of Martin Luther King, Jr., and Robert F. Kennedy; as well as war, both hot and cold.
 
 ![images/apollo-8-earthrise.webp](https://static.scientificamerican.com/blogs/assets/Image/apollo08_earthrise.jpg)
-*Earth, photographed by William A. Anders as Apollo 8 orbited the moon. Credit: [NASA](https://www.nasa.gov/image-feature/apollo-8-earthrise)
+*Earth, photographed by William A. Anders as Apollo 8 orbited the moon. Credit: [NASA](https://www.nasa.gov/image-feature/apollo-8-earthrise)*
 
 So, there it was, just what the doctor ordered: On Christmas Eve, pajama-clad kids who otherwise would be looking skyward for eight tiny reindeer were glued to their TV sets, along with an estimated half a billion people around the world, gaping at the moon’s stark, cratered surface hurtling by just 69 miles below and listening to awe-inspired astronauts who read “Genesis” and sent yuletide greetings to “[all of you on the good Earth](http://history.nasa.gov/SP-350/ch-9-6.html)”—the same good Earth they had been viewing in black and white as a fuzzy, cloud-veiled, gibbous globe, like they had never seen it before. Small wonder then that when Borman got back, someone had sent him a message: “Thanks for saving 1968.”
