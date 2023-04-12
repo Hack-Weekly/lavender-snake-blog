@@ -16,11 +16,7 @@
 		"date-fns": "^2.29.3",
 		"eslint": "8.37.0",
 		"eslint-config-next": "13.2.4",
-<<<<<<< HEAD
-=======
-		"firebase": "^9.19.1",
 		"fuse.js": "^6.6.2",
->>>>>>> df9fd15 (search-function)
 		"gray-matter": "^4.0.3",
 		"markdown-to-jsx": "^7.2.0",
 		"next": "13.2.4",
@@ -29,11 +25,8 @@
 		"react-dom": "18.2.0",
 		"react-hook-form": "^7.43.9",
 		"react-icons": "^4.8.0",
-<<<<<<< HEAD
 		"remove-markdown": "^0.5.0",
-=======
 		"tailwind-scrollbar": "^3.0.0",
->>>>>>> df9fd15 (search-function)
 		"typescript": "5.0.3"
 	},
 	"devDependencies": {
