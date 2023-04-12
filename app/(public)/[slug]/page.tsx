@@ -8,7 +8,35 @@ import Tag from "../components/Tag"
 import { BsHourglassSplit } from "react-icons/bs"
 import { join } from "path"
 import removeMd from "remove-markdown"
+import { Metadata } from "next"
 
+export async function generateMetadata({
+	params,
+}: {
+	params: { slug: string }
+}): Promise<Metadata> {
+	const post = getPostContent(params.slug)
+	return post
+		? {
+				title: post.data.title,
+				description: post.data.excerpt,
+				openGraph: {
+					title: post.data.title,
+					description: post.data.excerpt,
+					images: [post.data.imageSrc],
+					tags: post.data.tags,
+				},
+				twitter: {
+					title: post.data.title,
+					description: post.data.excerpt,
+					images: [post.data.imageSrc],
+				},
+		  }
+		: {
+				title: "Not found",
+				description: "We cannot find this post.",
+		  }
+}
 const getPostContent = (slug: string) => {
 	const folder = "posts/"
 	const file = join(process.cwd(), `${folder}${slug}.md`)
@@ -78,7 +106,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					</p>
 				</div>
 
-				<Markdown className="prose w-screen min-w-0 max-w-none px-4 dark:prose-invert">
+				<Markdown className="prose w-screen min-w-0 max-w-xl px-4 dark:prose-invert">
 					{post.content}
 				</Markdown>
 			</article>
