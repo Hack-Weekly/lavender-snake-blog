@@ -41,8 +41,8 @@ function SearchModal(searchModalProps: SearchModalProps){
                     <input type="text" name="" id="" value={searchInput} onChange={(e:any) => {setSearchInput(e.target.value)}} placeholder="Search blogs" className="w-full mr-2 bg-inherit outline-none p-1 text-lg placeholder:text-slate-500" />
                     <div onClick={searchModalProps.toggleSearch}></div>
                     <div className=" flex items-center bg-[#475569] ml-auto rounded-sm cursor-pointer" onClick={searchModalProps.toggleSearch}>
-                        <MdClose className="text-3xl" />
-                        {/* <div className="hidden xs:block p-1 ">Esc</div> */}
+                        <MdClose className="xs:hidden text-3xl" />
+                        <div className="hidden xs:block p-1 ">Esc</div>
                     </div>
                 </div>
                 <div className="flex items-center justify-center overflow-y-scroll">
@@ -73,26 +73,26 @@ export default function SearchBar(searchBarProps: SearchBarProps){
 	const toggleSearch = () => {
 		setIsSearchOpen(!isSearchOpen);
 	};
-    // const keyDownSearch = (event: KeyboardEvent) => {
-    //     // browsers may open own search bar on ctrl+k, preventDefault may prevent that
-    //     if (event.ctrlKey && event.key === "k") {
-    //         // event.preventDefault();
-    //         setIsSearchOpen(true);
-    //     }else if(event.key === "Escape"){
-    //         setIsSearchOpen(false);
-    //     }
-    // };
+    const keyDownSearch = (event: KeyboardEvent) => {
+        // browsers may open own search bar on ctrl+k, preventDefault may prevent that
+        if (event.ctrlKey && event.key === "k") {
+            event.preventDefault();
+            setIsSearchOpen(true);
+        }else if(event.key === "Escape"){
+            setIsSearchOpen(false);
+        }
+    };
 
-    // useEffect(() => {
-    //     window.addEventListener("keydown", keyDownSearch)
-    // });
+    useEffect(() => {
+        window.addEventListener("keydown", keyDownSearch)
+    });
 
     return(
         <div id="search-bar" >
             <div className="flex items-center gap-2.5 p-2 text-sm sm:bg-secondary-bg hover:bg-[#E9E9D5] xs:dark:bg-[#1E293B] dark:hover:bg-[#1E293B] rounded-md cursor-pointer" onClick={toggleSearch}>
                 <BsSearch className="text-base" />
                 <div className="hidden sm:block">Search</div>
-                {/* <div className="hidden md:block">Ctrl K</div> */}
+                <div className="hidden md:block">Ctrl K</div>
 		    </div>
             { isSearchOpen && <SearchModal toggleSearch={toggleSearch} postMetadatas={searchBarProps.postMetadatas}/> }
         </div>
