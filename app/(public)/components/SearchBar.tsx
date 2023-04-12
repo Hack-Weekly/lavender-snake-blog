@@ -16,9 +16,10 @@ interface SearchModalProps {
 }
 
 const fuseOptions = {
-	threshold: 0.6,
+	threshold: 0.0,
 	shouldSort: true,
 	// useExtendedSearch: false,
+	ignoreLocation: true,
 	keys: ["title", "excerpt", "author", "tags"],
 }
 
