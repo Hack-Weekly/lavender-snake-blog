@@ -14,9 +14,9 @@ export default function Home() {
 	return (
 		<div className="flex flex-col items-center">
 			<FeaturedPost />
-			<div className="mt-10 flex w-screen items-center gap-4 overflow-hidden px-5">
+			<div className="mt-10 flex w-full items-center gap-4 overflow-hidden px-5">
 				<div className="whitespace-nowrap font-medium">CATEGORIES</div>
-				<div className="flex items-center gap-3 overflow-auto text-sm text-primary-50/80 scrollbar-none">
+				<div className="flex-[0 0 100%] flex flex-nowrap items-center gap-3 overflow-auto text-sm text-primary-50/80 scrollbar-none">
 					{allTags.map((tag: string) => {
 						return (
 							<Link
