@@ -10,10 +10,11 @@ export async function generateMetadata({
 }: {
 	params: { category: string }
 }): Promise<Metadata> {
-	const title = params.category.charAt(0).toUpperCase() + params.category.slice(1)
+	const title =
+		params.category.charAt(0).toUpperCase() + params.category.slice(1)
 	return {
 		title: title,
-		description: `Posts under the ${title} category.`
+		description: `Posts under the ${title} category.`,
 	}
 }
 
@@ -36,8 +37,12 @@ export default function Category({ params }: { params: { category: string } }) {
 
 	return (
 		<div>
-			<h1 className="my-5 text-center text-3xl font-bold dark:text-white">
-				{capitalizeFirstLetter(category)}
+			<h1 className="font-md my-5 text-center text-3xl dark:text-white">
+				All posts under the{" "}
+				<span className="font-bold text-primary-200">
+					{capitalizeFirstLetter(category)}
+				</span>{" "}
+				category
 			</h1>
 			{allTags.includes(category) ? (
 				<div className="flex flex-col items-center">

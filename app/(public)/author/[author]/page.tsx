@@ -31,7 +31,7 @@ export default function Author({ params }: { params: { author: string } }) {
 	return (
 		<div>
 			<h1 className="font-md my-5 text-center text-3xl dark:text-white">
-				All posts by{" "}
+				All posts written by{" "}
 				<span className="font-bold text-primary-200">{author}</span>
 			</h1>
 			{allAuthors.includes(author) ? (

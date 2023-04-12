@@ -110,7 +110,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 			</article>
 		</section>
 	) : (
-		<div className="mx-5 mt-20 flex flex-col items-center justify-center gap-2 text-lg xs:flex-row">
+		<div className="mx-5 flex flex-col items-center justify-center gap-2 text-lg xs:flex-row">
 			<BsHourglassSplit />
 			We cannot find this post.
 		</div>
