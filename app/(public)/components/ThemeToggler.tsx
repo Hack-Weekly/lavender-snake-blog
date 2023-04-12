@@ -12,7 +12,7 @@ export default function ThemeToggler() {
 	useEffect(() => setMounted(true), [])
 
 	return (
-		<div className="flex items-center justify-center">
+		<div className="flex items-center justify-center text-2xl">
 			{mounted ? (
 				<button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
 					{theme === "light" ? <Moon /> : <Sun />}
