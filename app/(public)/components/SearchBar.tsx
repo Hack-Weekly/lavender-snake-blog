@@ -38,7 +38,7 @@ function SearchModal(searchModalProps: SearchModalProps){
             <div className="flex flex-col w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[45%] h-96 bg-[#1E293B] rounded">
                 <div className="flex items-center p-3 mb-2 border-b-[1px] border-[#475569]">
                     <BsSearch className="text-2xl mr-1" />
-                    <input type="text" name="" id="" value={searchInput} onChange={(e:any) => {setSearchInput(e.target.value)}} placeholder="Search blogs" className="w-full mr-2 bg-inherit outline-none p-1 text-lg placeholder:text-slate-500" />
+                    <input type="text" name="searchInput" id="" value={searchInput} onChange={(e:any) => {setSearchInput(e.target.value)}} placeholder="Search blogs" className="w-full mr-2 bg-inherit outline-none p-1 text-lg placeholder:text-slate-500" autoFocus />
                     <div onClick={searchModalProps.toggleSearch}></div>
                     <div className=" flex items-center bg-[#475569] ml-auto rounded-sm cursor-pointer" onClick={searchModalProps.toggleSearch}>
                         <MdClose className="xs:hidden text-3xl" />
