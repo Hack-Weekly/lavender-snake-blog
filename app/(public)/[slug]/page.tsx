@@ -57,7 +57,7 @@ export async function generateStaticParams() {
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
 	const plainText = removeMd(post ? post.content : "")
-	const wpm = 265 // medium's wpm
+	const wpm = 238 // https://wordsrated.com/reading-speed-statistics/
 	const words = plainText.trim().split(/\s+/).length
 	const readingTime = Math.ceil(words / wpm)
 	return post ? (
@@ -104,7 +104,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 					</p>
 				</div>
 
-				<Markdown className="prose w-screen min-w-0 max-w-xl px-4 dark:prose-invert">
+				<Markdown className="prose w-screen min-w-0 max-w-xl px-4 dark:prose-invert prose-img:rounded-md prose-img:bg-neutral-50 dark:prose-img:bg-neutral-400">
 					{post.content}
 				</Markdown>
 			</article>
