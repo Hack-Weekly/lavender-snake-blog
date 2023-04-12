@@ -29,7 +29,7 @@ export default function FeaturedPost() {
 			className={`mt-10 flex w-[90%] flex-col items-center rounded-lg bg-secondary-bg p-6 hover:drop-shadow-2xl dark:bg-[#1F2937] dark:hover:bg-[#293548] sm:w-[85%] sm:flex-row md:w-[85%] lg:w-[75%] lg:p-10 xl:w-[70%] ${inter.variable} font-inter cursor-pointer`}
 		>
 			<Image
-				className="mb-4 h-48 w-auto rounded-md sm:mb-0 sm:h-60 sm:w-5/12"
+				className="mb-4 h-48 w-auto rounded-md object-cover sm:mb-0 sm:h-60 sm:w-5/12"
 				src={featuredPostData.data.imageSrc}
 				alt="Featured Image"
 				width={384}

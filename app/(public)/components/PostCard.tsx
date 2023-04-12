@@ -25,7 +25,7 @@ export default function PostCard(postCardProps: postCardProps) {
 			className="flex cursor-pointer flex-row items-center rounded-lg bg-card-bg p-2 drop-shadow-sm hover:bg-secondary-bg hover:drop-shadow-lg dark:bg-[#1E293B] dark:hover:bg-[#293548] dark:hover:drop-shadow-2xl md:p-4"
 		>
 			<Image
-				className="block h-28 min-w-1/3 max-w-1/3 rounded-md md:h-28 lg:h-32 xl:h-36"
+				className="block h-28 min-w-1/3 max-w-1/3 rounded-md object-contain md:h-28 lg:h-32 xl:h-36"
 				src={postCardProps.cardData.imageSrc}
 				alt="Post Image"
 				width={384}
