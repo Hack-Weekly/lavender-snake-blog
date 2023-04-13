@@ -1,7 +1,7 @@
 ---
 id: "12"
 title: "Could Grinding Up Lithium Batteries Help Recycle Them?"
-date: "18 April 2023"
+date: "10 April 2023"
 excerpt: "Researchers recovered lithium from batteries on a small scale by using mechanical force"
 imageSrc: "/images/grinding-batteries.webp"
 author: "Vitiligo"

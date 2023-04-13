@@ -1,7 +1,7 @@
 ---
 id: "13"
 title: "Canadian Telescope Delivers Deepest-Ever Radio View of Cosmic Web"
-date: "18 April 2023"
+date: "9 April 2023"
 excerpt: "Data from the CHIME radio observatory are a milestone in the quest to discover the hidden origins of universal structure"
 imageSrc: "/images/cosmic-web.webp"
 author: "Vitiligo"

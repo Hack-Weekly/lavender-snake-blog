@@ -1,7 +1,7 @@
 ---
 id: "11"
 title: "How to Tell If a Photo Is an AI-Generated Fake"
-date: "18 April 2023"
+date: "8 April 2023"
 excerpt: "Artificial-intelligence-powered image-generating systems are making fake photographs so hard to detect that we need AI to catch them"
 imageSrc: "/images/ai-generated-photo.webp"
 author: "Vitiligo"

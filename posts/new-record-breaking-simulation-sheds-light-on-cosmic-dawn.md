@@ -1,7 +1,7 @@
 ---
 id: "2"
 title: "New Record-Breaking Simulation Sheds Light on ‘Cosmic Dawn’"
-date: "18 April 2023"
+date: "11 April 2023"
 excerpt: "THESAN—the largest, most detailed computer model of the universe’s first billion years yet made—is helping set expectations for observations from NASA’s James Webb Space Telescope"
 imageSrc: "/images/simulation-of-cosmic-dawn.webp"
 author: "Vitiligo"

@@ -1,7 +1,7 @@
 ---
 id: "9"
 title: "AI Is Getting Powerful. But Can Researchers Make It Principled?"
-date: "18 April 2023"
+date: "8 April 2023"
 excerpt: "Can researchers create AI algorithms that are ethical today—and will be safe in the future?"
 imageSrc: "/images/powerful-ai.webp"
 author: "Vitiligo"

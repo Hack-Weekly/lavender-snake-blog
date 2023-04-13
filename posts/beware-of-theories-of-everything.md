@@ -1,7 +1,7 @@
 ---
 id: "17"
 title: "Beware of ‘Theories of Everything’"
-date: "15 April 2023"
+date: "5 April 2023"
 excerpt: "Nature is under no obligation to conform to our mathematical ideas—even the most brilliant ones"
 imageSrc: "/images/beware-everyting-theory.webp"
 author: "Vitiligo"

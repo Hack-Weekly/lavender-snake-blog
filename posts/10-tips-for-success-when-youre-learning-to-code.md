@@ -1,7 +1,7 @@
 ---
 id: "19"
 title: "10 tips for success when you’re learning to code"
-date: "14 April 2023"
+date: "10 April 2023"
 excerpt: "If you’re teaching yourself how to code, you may have more questions than answers when you’re starting out."
 imageSrc: "/images/10-tips-for-learning-code.jpeg"
 author: "Vitiligo"
