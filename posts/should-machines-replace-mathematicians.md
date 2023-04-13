@@ -3,9 +3,9 @@ id: "14"
 title: "Should Machines Replace Mathematicians?"
 date: "18 April 2023"
 excerpt: "A “replication crisis” in mathematics raises questions about the purpose of knowledge"
-imageSrc: "/images/cosmic-web.webp"
+imageSrc: "/images/mathematicians.webp"
 author: "Vitiligo"
-tags: ["technology", "science", "electronics", "mathematics"]
+tags: ["technology", "science", "mathematics"]
 ---
 
 Pure mathematics fascinates me, precisely because it is so inaccessible. I envision it as a remote, chilly, perilous realm, like Antarctica’s Sentinel Range. The hardy souls who scale the heights of mathematics seem superhuman.
