@@ -5,7 +5,7 @@ date: "13 April 2023"
 excerpt: "Discover 10 key differences between Computer Science and Software Engineering, from their focus and programming languages to their approach to research and practice. Whether you're considering a career in technology or want to deepen your understanding of the field, this post is a must-read."
 imageSrc: "/images/cs-vs-se.avif"
 author: "Vitiligo"
-tags: ["cs", "technology"]
+tags: ["cs", "programming", "technology"]
 ---
 
 Computer science and software engineering may share some overlapping commonalities, however, the principles behind each field can offer several differences. One is that computer science deals with the science behind the interaction between hardware and software systems and computational applications, whereas software engineering typically deals with the engineering principles of building, designing and testing software products.
