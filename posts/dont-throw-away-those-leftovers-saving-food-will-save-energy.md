@@ -1,7 +1,7 @@
 ---
 id: "8"
 title: "Don't Throw Away Those Leftovers! Saving Food Will Save Energy"
-date: "18 April 2023"
+date: "7 April 2023"
 excerpt: "Don’t be too quick to throw away those Thanksgiving leftovers. By saving that turkey and stuffing to eat another day, you can help save a lot of energy from ending up in the garbage bin"
 imageSrc: "/images/leftover-food.webp"
 author: "Vitiligo"

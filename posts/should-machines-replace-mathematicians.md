@@ -1,7 +1,7 @@
 ---
 id: "14"
 title: "Should Machines Replace Mathematicians?"
-date: "18 April 2023"
+date: "13 April 2023"
 excerpt: "A “replication crisis” in mathematics raises questions about the purpose of knowledge"
 imageSrc: "/images/mathematicians.webp"
 author: "Vitiligo"

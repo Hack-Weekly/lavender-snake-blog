@@ -1,7 +1,7 @@
 ---
 id: "10"
 title: "I Gave ChatGPT an IQ Test. Here’s What I Discovered"
-date: "18 April 2023"
+date: "6 April 2023"
 excerpt: "The chatbot was the ideal test taker—it exhibited no trace of test anxiety, poor concentration or lack of effort. And what about that IQ score?"
 imageSrc: "/images/chatgpt-iq-test.webp"
 author: "Vitiligo"
