@@ -5,7 +5,7 @@ date: "8 April 2023"
 excerpt: "Ever since the pandemic started, I've noticed QR codes creeping into my daily life. Venue check-ins, digital menus at restaurants, and online payments."
 imageSrc: "/images/thinkstock-qr-code.webp"
 author: "Ajoy"
-tags: ["mathematics", "science"]
+tags: ["Programming", "Technology", "code"]
 ---
 
 Ever since the pandemic started, I've noticed QR codes creeping into my daily life. Venue check-ins, digital menus at restaurants, and online payments.
