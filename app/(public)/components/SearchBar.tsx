@@ -55,7 +55,7 @@ function SearchModal(searchModalProps: SearchModalProps) {
 						onClick={searchModalProps.toggleSearch}
 					>
 						<MdClose className="text-3xl xs:hidden" />
-						<kbd className="hidden p-1 xs:block ">Esc</kbd>
+						<kbd className="hidden px-2 py-1 xs:block ">Esc</kbd>
 					</div>
 				</div>
 				<div className="flex flex-col items-center overflow-y-auto">
