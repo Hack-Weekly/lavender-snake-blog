@@ -18,7 +18,9 @@ export default function Nav() {
 					height={64}
 					priority
 				/>
-				<div className="text-lg font-bold xs:text-xl">Snakebyte</div>
+				<div className="hidden text-lg font-bold min-[380px]:block xs:text-xl">
+					Snakebyte
+				</div>
 			</Link>
 			<div className="relative flex items-center gap-4">
 				<SearchBar postMetadatas={postMetadata} />

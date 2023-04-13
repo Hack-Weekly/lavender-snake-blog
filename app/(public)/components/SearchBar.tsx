@@ -120,10 +120,10 @@ export default function SearchBar(searchBarProps: SearchBarProps) {
 	return (
 		<div id="search-bar">
 			<div
-				className="group flex cursor-pointer items-center gap-4 rounded-md px-4 py-2 text-sm xs:dark:bg-[#1E293B] sm:bg-secondary-bg"
+				className="group flex cursor-pointer items-center gap-4 rounded-md text-sm sm:bg-secondary-bg sm:px-4 sm:py-2 sm:dark:bg-[#1E293B]"
 				onClick={toggleSearch}
 			>
-				<BsSearch className="text-base opacity-75 group-hover:opacity-100" />
+				<BsSearch className="text-xl opacity-75 group-hover:opacity-100 sm:text-base" />
 				<div className="hidden items-center gap-3 opacity-75 group-hover:opacity-100 sm:flex">
 					<div className="hidden sm:block">Search</div>
 					<div className="flex gap-1">
