@@ -63,7 +63,7 @@ My problem with this is that over-promotion of this gives people a very optimist
 
 I do have friends who went through a bootcamp and were able to get a job as a programmer in a matter of months. But from the people I know or have heard who didn’t have the bootcamp experience and instead taught themselves, it took them much longer, like 1–2 years.
 
-If you want to hear a real-life story of someone teaching themselves to code, read [my interview with Owen](./learning-code-parent-full-time-job.md). He had a full-time job and a toddler but taught himself to code by waking up before the crack of dawn almost every day and grinding it out for two years.
+If you want to hear a real-life story of someone teaching themselves to code, read [my interview with Owen](https://coder-coder.com/learning-code-parent-full-time-job/). He had a full-time job and a toddler but taught himself to code by waking up before the crack of dawn almost every day and grinding it out for two years.
 
 He did recently land a full-time web developer job, but it was after a long time of very, very hard work.
 
