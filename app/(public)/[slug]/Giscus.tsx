@@ -77,7 +77,7 @@ export default function Giscus() {
 	}, [LoadComments])
 
 	return (
-		<div className="w-full pb-6 pt-6 text-center text-gray-700">
+		<div className="w-full pb-6 pt-6 text-center">
 			{enableLoadComments && (
 				<button onClick={LoadComments}>Load Comments</button>
 			)}
