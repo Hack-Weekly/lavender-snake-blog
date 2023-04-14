@@ -9,6 +9,7 @@ import { BsHourglassSplit } from "react-icons/bs"
 import { join } from "path"
 import removeMd from "remove-markdown"
 import { Metadata } from "next"
+import Giscus from "./Giscus"
 
 export async function generateMetadata({
 	params,
@@ -107,6 +108,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 				<Markdown className="prose w-screen min-w-0 max-w-xl px-4 dark:prose-invert prose-img:rounded-md prose-img:bg-neutral-50 dark:prose-img:bg-neutral-400">
 					{post.content}
 				</Markdown>
+				<Giscus />
 			</article>
 		</section>
 	) : (
