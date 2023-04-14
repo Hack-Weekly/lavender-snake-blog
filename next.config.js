@@ -2,6 +2,7 @@
 const nextConfig = {
 	experimental: {
 		appDir: true,
+		scrollRestoration: true,
 	},
 	images: {
 		domains: ["https://visitor-badge.glitch.me"],

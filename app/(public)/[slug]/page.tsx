@@ -57,10 +57,7 @@ export async function generateStaticParams() {
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
-	const urlDomain = process.env.domain
-	console.log(urlDomain);
-	
-	
+	const urlDomain = process.env.domain	
 	
 	const plainText = removeMd(post ? post.content : "")
 	const wpm = 238 // https://wordsrated.com/reading-speed-statistics/
