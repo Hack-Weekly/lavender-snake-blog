@@ -117,7 +117,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 				</Markdown>
 				<div className="w-full flex items-center justify-center">
 					{/*  eslint-disable-next-line @next/next/no-img-element */}
-					<img src={`https://visitor-badge.glitch.me/badge?page_id=${urlDomain}+${params.slug}`} alt="Post visitor count" />
+					<img src={`https://visitor-badge.glitch.me/badge?page_id=${urlDomain}.${params.slug}`} alt="Post visitor count" />
 				</div>
 				<Giscus />
 			</article>
