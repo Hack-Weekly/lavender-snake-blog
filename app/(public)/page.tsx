@@ -24,7 +24,7 @@ export default function Home() {
 							<Link
 								href={`/category/${tag}`}
 								key={tag}
-								className="rounded-md px-4 py-1 odd:bg-primary-400 even:bg-secondary-400 hover:text-primary-300"
+								className="rounded-md px-4 py-1 odd:bg-primary-500 odd:hover:bg-primary-600 even:bg-secondary-500 even:hover:bg-secondary-600 text-primary-50"
 							>
 								{tag.toUpperCase()}
 							</Link>
