@@ -4,7 +4,15 @@ const nextConfig = {
 		appDir: true,
 	},
 	images: {
-		domains: ["picsum.photos"], // Lorem Pictures. Replace this later on.
+		domains: ["https://visitor-badge.glitch.me"],
+		// remotePatterns: [
+		// 	{
+		// 	  protocol: 'https',
+		// 	  hostname: 'visitor-badge.glitch.me',
+		// 	  port: '',
+		// 	  pathname: '/**',
+		// 	},
+		// ],
 	},
 }
 
