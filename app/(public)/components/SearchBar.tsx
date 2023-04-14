@@ -55,7 +55,9 @@ function SearchModal(searchModalProps: SearchModalProps) {
 						onClick={searchModalProps.toggleSearch}
 					>
 						<MdClose className="text-3xl xs:hidden" />
-						<kbd className="hidden px-2 py-1 xs:block ">Esc</kbd>
+						<kbd className="hidden px-2 py-1 opacity-80 hover:opacity-100 xs:block">
+							Esc
+						</kbd>
 					</div>
 				</div>
 				<div className="flex flex-col items-center overflow-y-auto">
@@ -65,7 +67,9 @@ function SearchModal(searchModalProps: SearchModalProps) {
 					)}
 					{searchInput && searchResult.length > 0 && (
 						<div className="w-full p-3 pt-0">
-							<div>Search results for &quot;{searchInput}&quot;</div>
+							<div className="mb-4 mt-2">
+								Search results for &quot;{searchInput}&quot;
+							</div>
 							<div className="flex w-full flex-col gap-2">
 								{searchResult.map((matchedPost: any) => {
 									return (
