@@ -57,6 +57,11 @@ export async function generateStaticParams() {
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
 	const post = getPostContent(params.slug)
+	const urlDomain = process.env.domain
+	console.log(urlDomain);
+	
+	
+	
 	const plainText = removeMd(post ? post.content : "")
 	const wpm = 238 // https://wordsrated.com/reading-speed-statistics/
 	const words = plainText.trim().split(/\s+/).length
@@ -89,25 +94,31 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 						height={600}
 					/>
 				</div>
-				<div className="flex w-full flex-row items-center justify-between gap-2 px-4">
-					<p className="text-left text-sm font-light text-neutral-400">
-						{readingTime} {readingTime != 1 ? "minutes" : "minute"} read...
-					</p>
-					<p className="flex-none text-right text-sm">
-						Written by{" "}
-						<Link
-							href={`/author/${post.data.author}`}
-							className="font-bold text-primary-800 dark:text-primary-100"
-						>
-							{post.data.author}
-						</Link>{" "}
-						on {post.data.date}
-					</p>
+				<div className="flex w-full flex-col items-center justify-between gap-1 px-4">
+					<div className="w-full flex flex-row items-center justify-between">
+						<p className="text-left text-sm font-light text-neutral-400">
+							{readingTime} {readingTime != 1 ? "minutes" : "minute"} read...
+						</p>
+						<p className="flex-none text-right text-sm">
+							Written by{" "}
+							<Link
+								href={`/author/${post.data.author}`}
+								className="font-bold text-primary-800 dark:text-primary-100"
+							>
+								{post.data.author}
+							</Link>{" "}
+							on {post.data.date}
+						</p>
+					</div>
 				</div>
 
 				<Markdown className="prose w-screen min-w-0 max-w-xl px-4 dark:prose-invert prose-img:rounded-md prose-img:bg-neutral-50 dark:prose-img:bg-neutral-400">
 					{post.content}
 				</Markdown>
+				<div className="w-full flex items-center justify-center">
+					{/*  eslint-disable-next-line @next/next/no-img-element */}
+					<img src={`https://visitor-badge.glitch.me/badge?page_id=${urlDomain}+${params.slug}`} alt="Post visitor count" />
+				</div>
 				<Giscus />
 			</article>
 		</section>
