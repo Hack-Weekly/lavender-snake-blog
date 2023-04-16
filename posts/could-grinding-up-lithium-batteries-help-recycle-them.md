@@ -5,7 +5,7 @@ date: "10 April 2023"
 excerpt: "Researchers recovered lithium from batteries on a small scale by using mechanical force"
 imageSrc: "/images/grinding-batteries.webp"
 author: "Vitiligo"
-tags: ["techonology", "science", "electronics"]
+tags: ["technology", "science", "electronics"]
 ---
 
 Grinding up old batteries might lead to a low-energy way to recycle the lithium and other metals used in them.

@@ -10,7 +10,8 @@ const getAllUniqueTags = (): string[] => {
         allTags.push(...(post.tags));
     });
 
-    const uniqueTags = allTags.filter((item, i, arr) => arr.indexOf(item) === i );
+    const uniqueTags = allTags.filter((item, i, arr) => arr.indexOf(item.toLowerCase()) === i );
+    
     return uniqueTags;
 }
 

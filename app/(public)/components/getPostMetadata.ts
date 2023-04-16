@@ -14,6 +14,11 @@ const getPostMetadata = (): PostMetadata[] => {
 			"utf8"
 		)
 		const matterResult = matter(fileContents)
+			const postTags = matterResult.data.tags;
+			const lowerCaseTags = postTags.map((tag: string) => tag.toLowerCase());
+			console.log(lowerCaseTags);
+			
+
 		return {
 			id: matterResult.data.id,
 			title: matterResult.data.title,
@@ -21,7 +26,7 @@ const getPostMetadata = (): PostMetadata[] => {
 			excerpt: matterResult.data.excerpt,
 			imageSrc: matterResult.data.imageSrc,
 			author: matterResult.data.author,
-			tags: matterResult.data.tags,
+			tags: lowerCaseTags,
 			slug: fileName.replace(".md", ""),
 		}
 	})

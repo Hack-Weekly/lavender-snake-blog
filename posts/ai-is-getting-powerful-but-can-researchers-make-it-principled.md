@@ -5,7 +5,7 @@ date: "8 April 2023"
 excerpt: "Can researchers create AI algorithms that are ethical today—and will be safe in the future?"
 imageSrc: "/images/powerful-ai.webp"
 author: "Vitiligo"
-tags: ["techonology", "science", "ai"]
+tags: ["Technology", "science", "ai"]
 ---
 
 Soon after Alan Turing initiated the study of computer science in 1936, he began wondering if humanity could one day build machines with intelligence comparable to that of humans. Artificial intelligence, the modern field concerned with this question, has come a long way since then. But truly intelligent machines that can independently accomplish many different tasks have yet to be invented. And though science fiction has long imagined AI one day taking malevolent forms such as amoral androids or murderous Terminators, today’s AI researchers are often more worried about the everyday AI algorithms that already are enmeshed with our lives—and the problems that have already become associated with them.
