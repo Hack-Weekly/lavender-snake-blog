@@ -3,7 +3,7 @@ import FilteredPosts from "./components/FilteredPosts"
 import PostCard from "./components/PostCard"
 import getPostMetadata from "./components/getPostMetadata"
 import getAllUniqueTags from "./components/getAllUniqueTags"
-import Link from "next/link"
+import Categories from "./components/Categories"
 
 export default function Home() {
 	const allTags = getAllUniqueTags()
@@ -14,24 +14,7 @@ export default function Home() {
 	return (
 		<div className="flex flex-col items-center">
 			<FeaturedPost />
-			<div className="mt-10 flex w-full items-center gap-4 overflow-hidden px-5">
-				<div className="hidden whitespace-nowrap font-medium sm:block">
-					CATEGORIES
-				</div>
-				<div className="flex-[0 0 100%] flex flex-nowrap items-center gap-3 overflow-auto text-sm text-primary-50/80 scrollbar-none">
-					{allTags.map((tag: string) => {
-						return (
-							<Link
-								href={`/category/${tag}`}
-								key={tag}
-								className="rounded-md px-4 py-1 odd:bg-primary-500 odd:hover:bg-primary-600 even:bg-secondary-500 even:hover:bg-secondary-600 text-primary-50"
-							>
-								{tag.toUpperCase()}
-							</Link>
-						)
-					})}
-				</div>
-			</div>
+			<Categories tags={allTags} />
 			<FilteredPosts>
 				{postMetadata.map((post, index) => {
 					return <PostCard key={index} cardData={post} />
