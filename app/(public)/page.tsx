@@ -9,7 +9,6 @@ export default function Home() {
 	const allTags = getAllUniqueTags()
 
 	const postMetadata = getPostMetadata()
-	// console.log(postMetadata);
 
 	return (
 		<div className="flex flex-col items-center">
